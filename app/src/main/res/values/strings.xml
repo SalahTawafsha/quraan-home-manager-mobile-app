@@ -11,4 +11,7 @@
     <string name="update_students">اضافة او حذف طالب</string>
     <string name="student_list">قائمة الطلاب</string>
     <string name="audience">تسجيل الحضور</string>
+    <string name="add_student">إضافة طالب</string>
+    <string name="student_name">اسم الطالب</string>
+    <string name="delete">حذف</string>
 </resources>
