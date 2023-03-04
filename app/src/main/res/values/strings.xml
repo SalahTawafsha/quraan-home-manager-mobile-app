@@ -2,7 +2,7 @@
     <string name="app_name">دار القرآن</string>
     <string name="teacherName">اسم المستخدم</string>
     <string name="password">كلمة السر</string>
-    <string name="welcome">صفحة تسجيل الدخول</string>
+    <string name="welcome">تسجيل الدخول</string>
     <string name="have_not_account">ليس لديك حساب؟</string>
     <string name="sign_up">إنشاء حساب</string>
     <string name="log_in">تسجيل الدخول</string>
