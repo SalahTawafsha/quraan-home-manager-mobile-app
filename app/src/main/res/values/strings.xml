@@ -2,7 +2,7 @@
     <string name="app_name">دار القرآن</string>
     <string name="teacherName">اسم المستخدم</string>
     <string name="password">كلمة السر</string>
-    <string name="welcome">صلي عالنبي 🍃</string>
+    <string name="welcome">صفحة تسجيل الدخول</string>
     <string name="have_not_account">ليس لديك حساب؟</string>
     <string name="sign_up">إنشاء حساب</string>
     <string name="log_in">تسجيل الدخول</string>
@@ -16,7 +16,7 @@
     <string name="delete">حذف</string>
     <string name="save">حفظ</string>
     <string name="quran_Memorizing">الحفظ</string>
-    <string name="recitation">التحويد</string>
+    <string name="recitation">التجويد</string>
     <string name="notes">تسجيل ملاحظات</string>
     <string name="absence">الغياب</string>
     <string name="zero">0</string>

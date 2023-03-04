@@ -6,6 +6,7 @@ import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -43,10 +44,11 @@ public class StudentAbsenceActivity extends AppCompatActivity {
 
     @SuppressLint({"SimpleDateFormat", "SetTextI18n"})
     private void loadStudents() {
-        database.child("student").child(sharedPref.getString("currStudent", "")).get().addOnCompleteListener(task -> {
-            for (DataSnapshot ds : task.getResult().getChildren())
-                if (Objects.requireNonNull(ds.getValue(Student.class)).getDatesOfAbsence() != null) {
-                    ArrayList<Date> dates = Objects.requireNonNull(ds.getValue(Student.class)).getDatesOfAbsence();
+        Log.e("currStudent", sharedPref.getString("currStudent", ""));
+        database.child("student").child(sharedPref.getString("currStudent", ""))
+                .get().addOnCompleteListener(task -> {
+
+                    ArrayList<Date> dates = Objects.requireNonNull(task.getResult().getValue(Student.class)).getDatesOfAbsence();
                     ArrayList<String> formattedDates = new ArrayList<>(dates.size());
                     for (int i = 0; i < dates.size(); i++) {
                         formattedDates.add(new SimpleDateFormat("dd-MM-yyyy").format(dates.get(i)));
@@ -55,7 +57,10 @@ public class StudentAbsenceActivity extends AppCompatActivity {
                     absenceCount.setText(formattedDates.size() + "");
                     ArrayAdapter<String> adapter = new ArrayAdapter<>(this, androidx.appcompat.R.layout.support_simple_spinner_dropdown_item, formattedDates);
                     list.setAdapter(adapter);
-                }
+//            for (DataSnapshot ds : task.getResult().getChildren())
+//                if (Objects.requireNonNull(ds.getValue(Student.class)).getDatesOfAbsence() != null) {
+//                    break;
+//                }
         });
     }
 }
