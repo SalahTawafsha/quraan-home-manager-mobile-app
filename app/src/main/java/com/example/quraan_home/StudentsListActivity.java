@@ -23,6 +23,8 @@ public class StudentsListActivity extends AppCompatActivity {
     private ListView list;
     private final DatabaseReference database = FirebaseDatabase.getInstance().getReference();
     private SharedPreferences sharedPref;
+    private SharedPreferences.Editor editor;
+    private final List<String> students = new ArrayList<>();
 
 
     @Override
@@ -34,18 +36,27 @@ public class StudentsListActivity extends AppCompatActivity {
         sharedPref = getSharedPreferences(
                 getString(R.string.login)
                 , Context.MODE_PRIVATE);
+
+        editor = sharedPref.edit();
         loadStudents();
 
         list.setOnItemClickListener((adapterView, view, i, l) -> {
+            editor.putString("currStudent", students.get(i));
             Intent intent = new Intent(this, StudentPageActivity.class);
             startActivity(intent);
         });
     }
 
+    @Override
+    public void onBackPressed() {
+        editor.putString("currStudent", "");
+        editor.commit();
+        super.onBackPressed();
+    }
+
     private void loadStudents() {
         database.child("student").orderByChild("teacherName").equalTo(sharedPref.getString("logInID", ""))
                 .get().addOnCompleteListener(task -> {
-                    List<String> students = new ArrayList<>();
                     for (DataSnapshot ds : task.getResult().getChildren())
                         students.add(Objects.requireNonNull(ds.getValue(Student.class)).getName());
 

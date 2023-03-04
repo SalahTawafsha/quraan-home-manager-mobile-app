@@ -13,7 +13,14 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Quran_home">
         <activity
-            android:name=".AudienceActivity"
+            android:name=".StudentAbsenceActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".AbsenceActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
@@ -34,9 +41,9 @@
                 android:value="" />
         </activity>
         <activity
-            android:windowSoftInputMode="adjustNothing"
             android:name=".UpdateActivity"
-            android:exported="false">
+            android:exported="false"
+            android:windowSoftInputMode="adjustNothing">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />

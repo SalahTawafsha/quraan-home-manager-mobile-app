@@ -15,4 +15,9 @@
     <string name="student_name">اسم الطالب</string>
     <string name="delete">حذف</string>
     <string name="save">حفظ</string>
+    <string name="quran_Memorizing">الحفظ</string>
+    <string name="recitation">التحويد</string>
+    <string name="notes">تسجيل ملاحظات</string>
+    <string name="absence">الغياب</string>
+    <string name="zero">0</string>
 </resources>

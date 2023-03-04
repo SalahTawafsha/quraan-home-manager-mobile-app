@@ -6,7 +6,6 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.CheckBox;
 import android.widget.LinearLayout;
@@ -21,7 +20,7 @@ import java.util.Objects;
 
 import entities.Student;
 
-public class AudienceActivity extends AppCompatActivity {
+public class AbsenceActivity extends AppCompatActivity {
     private LinearLayout students;
     private final DatabaseReference database = FirebaseDatabase.getInstance().getReference();
     private SharedPreferences sharedPref;
@@ -30,7 +29,7 @@ public class AudienceActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_audience);
+        setContentView(R.layout.activity_absence);
 
         students = findViewById(R.id.students_audience);
 

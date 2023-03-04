@@ -41,7 +41,7 @@ public class HomeActivity extends AppCompatActivity {
     }
 
     public void audience(View view) {
-        Intent intent = new Intent(this, AudienceActivity.class);
+        Intent intent = new Intent(this, AbsenceActivity.class);
         startActivity(intent);
     }
 }
