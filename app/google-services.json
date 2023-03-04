@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "697751382851",
+    "project_id": "quraan-home",
+    "storage_bucket": "quraan-home.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:697751382851:android:849f20ea82cd5b2bf79df6",
+        "android_client_info": {
+          "package_name": "com.example.quraan_home"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "697751382851-aiuiie9488pek5bjm88gp9ftvhon089e.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCzP1tnuNCEKMfMVHDBubYFw6ZgKe7ze5U"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "697751382851-aiuiie9488pek5bjm88gp9ftvhon089e.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
