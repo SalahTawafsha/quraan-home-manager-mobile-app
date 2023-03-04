@@ -36,6 +36,8 @@ public class HomeActivity extends AppCompatActivity {
     }
 
     public void studentList(View view) {
+        Intent intent = new Intent(this, StudentsListActivity.class);
+        startActivity(intent);
     }
 
     public void audience(View view) {
