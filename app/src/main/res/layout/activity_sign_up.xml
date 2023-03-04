@@ -23,7 +23,7 @@
 
 
         <EditText
-            android:id="@+id/studentId"
+            android:id="@+id/teacherName"
             style="@style/EditText"
             android:ems="10"
             android:hint="@string/teacherName"

@@ -7,4 +7,8 @@
     <string name="sign_up">إنشاء حساب</string>
     <string name="log_in">تسجيل الدخول</string>
     <string name="rewrite_password">تاكيد كلمة السر</string>
+    <string name="login" />
+    <string name="update_students">اضافة او حذف طالب</string>
+    <string name="student_list">قائمة الطلاب</string>
+    <string name="audience">تسجيل الحضور</string>
 </resources>

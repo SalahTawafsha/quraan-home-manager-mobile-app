@@ -26,7 +26,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <EditText
-            android:id="@+id/editTextTextPassword"
+            android:id="@+id/loginPassword"
             style="@style/TextView"
             android:autofillHints=""
             android:hint="@string/password"
@@ -39,7 +39,7 @@
             app:layout_constraintVertical_bias="0.552" />
 
         <EditText
-            android:id="@+id/editTextTextPersonName"
+            android:id="@+id/loginTeacherName"
             style="@style/TextView"
             android:autofillHints=""
             android:hint="@string/teacherName"
