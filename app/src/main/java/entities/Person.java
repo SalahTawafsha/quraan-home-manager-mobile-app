@@ -4,7 +4,7 @@ import androidx.annotation.NonNull;
 
 import java.util.Objects;
 
-public abstract class Person implements Comparable<Person> {
+abstract class Person implements Comparable<Person> {
     private String name;
 
     public Person() {
