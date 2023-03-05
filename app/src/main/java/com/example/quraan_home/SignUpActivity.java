@@ -40,10 +40,11 @@ public class SignUpActivity extends AppCompatActivity {
 
     public void add(View view) {
         if (name.getText().toString().isEmpty()) {
-            Toast.makeText(this, "اسم المعلم لا يمكن ان يبقى فارغ", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "لا يمكن أن يكون اسم المستخدم فارغ", Toast.LENGTH_SHORT).show();
             return;
-        } else if (firstPass.getText().toString().isEmpty()) {
-            Toast.makeText(this, "كلمة السر لا يمكن ان تكون فارغة", Toast.LENGTH_SHORT).show();
+        }
+        if (firstPass.getText().toString().isEmpty()) {
+            Toast.makeText(this, "لا يمكن ان تكون كلمة السر  فارغة", Toast.LENGTH_SHORT).show();
             return;
         }
 

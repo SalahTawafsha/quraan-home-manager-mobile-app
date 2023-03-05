@@ -8,8 +8,11 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
+
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+
+import entities.Assistance;
 import entities.Teacher;
 
 public class LoginActivity extends Activity {
@@ -47,7 +50,7 @@ public class LoginActivity extends Activity {
     }
 
     public void logIn(View view) {
-        if(name.getText().toString().isEmpty()){
+        if (name.getText().toString().isEmpty()) {
             Toast.makeText(this, "لا يمكن ان يكون اسم المعلم فارغ", Toast.LENGTH_SHORT).show();
             return;
         }
@@ -62,8 +65,23 @@ public class LoginActivity extends Activity {
                     startActivity(intent);
                 } else
                     Toast.makeText(this, "كلمة السر خاطئة", Toast.LENGTH_SHORT).show();
-            } else
-                Toast.makeText(this, "اسم المعلم غير موجود", Toast.LENGTH_SHORT).show();
+            } else {
+                database.child("assistants").child(name.getText().toString())
+                        .get().addOnCompleteListener(task1 -> {
+                            Assistance a = task1.getResult().getValue(Assistance.class);
+                            if (a != null) {
+                                String password = a.getPassword();
+                                if (this.password.getText().toString().equals(password)) {
+                                    editor.putString("logInID", a.getTeacherName());
+                                    editor.commit();
+                                    Intent intent = new Intent(this, HomeActivity.class);
+                                    startActivity(intent);
+                                } else
+                                    Toast.makeText(this, "كلمة السر خاطئة", Toast.LENGTH_SHORT).show();
+                            } else
+                                Toast.makeText(this, "اسم المعلم غير موجود", Toast.LENGTH_SHORT).show();
+                        });
+            }
         });
     }
 
