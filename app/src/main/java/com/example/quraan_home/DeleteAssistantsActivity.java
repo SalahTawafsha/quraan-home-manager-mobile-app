@@ -66,6 +66,7 @@ public class DeleteAssistantsActivity extends AppCompatActivity {
         ArrayAdapter<String> adapter =
                 new ArrayAdapter<>(this, androidx.appcompat.R.layout.support_simple_spinner_dropdown_item, assistantsList);
         assistants.setAdapter(adapter);
+        delete.setEnabled(false);
         Toast.makeText(this, "تم الحذف !", Toast.LENGTH_SHORT).show();
     }
 }

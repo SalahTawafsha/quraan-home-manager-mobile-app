@@ -1,7 +1,6 @@
 package com.example.quraan_home;
 
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -11,17 +10,13 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.Toast;
-
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
-
 import entities.Assistance;
-import entities.Student;
 
 public class AddAssistantsActivity extends AppCompatActivity {
     private ListView assistants;
@@ -67,6 +62,7 @@ public class AddAssistantsActivity extends AppCompatActivity {
         ArrayAdapter<String> adapter =
                 new ArrayAdapter<>(this, androidx.appcompat.R.layout.support_simple_spinner_dropdown_item, assistantsList);
         assistants.setAdapter(adapter);
+        add.setEnabled(false);
         Toast.makeText(this, "تمت الإضافة !", Toast.LENGTH_SHORT).show();
     }
 }
