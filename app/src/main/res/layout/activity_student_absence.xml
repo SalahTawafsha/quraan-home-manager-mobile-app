@@ -35,6 +35,13 @@
             style="@style/label"
             android:text="@string/zero"/>
 
+        <Button
+            android:id="@+id/delete"
+            android:enabled="false"
+            style="@style/myButton"
+            android:onClick="deleteAbsence"
+            android:text="@string/delete"/>
+
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

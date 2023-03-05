@@ -52,9 +52,9 @@ public class AbsenceActivity extends AppCompatActivity {
                         checkBox.setTextSize(20);
                         checkBox.setPadding(0, 25, 0, 25);
                         Student s = new Student(Objects.requireNonNull(ds.getValue(Student.class)).getName(), sharedPref.getString("logInID", ""),
-                                Objects.requireNonNull(ds.getValue(Student.class)).getAbsenceCount(), Objects.requireNonNull(ds.getValue(Student.class)).getDatesOfAbsence());
+                                Objects.requireNonNull(ds.getValue(Student.class)).getDatesOfAbsence().size(), Objects.requireNonNull(ds.getValue(Student.class)).getDatesOfAbsence());
                         studentList.add(s);
-                        String text = "(" + s.getAbsenceCount() + ") " + s.getName();
+                        String text = "(" + s.getDatesOfAbsence().size() + ") " + s.getName();
                         checkBox.setText(text);
                         checkBox.setChecked(true);
                         checkBox.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT));
