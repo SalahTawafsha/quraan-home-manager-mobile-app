@@ -3,9 +3,10 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
     android:background="@drawable/background"
-    tools:context=".HomeActivity">
+    android:layout_height="match_parent"
+    tools:context=".AddAssistantsActivity">
+
 
     <LinearLayout
         android:id="@+id/linearLayout"
@@ -23,25 +24,20 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <Button
-            style="@style/myButton"
-            android:onClick="updateStudents"
-            android:text="@string/update_students"/>
+        <ListView
+            android:background="@color/white"
+            android:id="@+id/list"
+            android:layout_margin="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="350dp"/>
 
         <Button
+            android:id="@+id/add"
             style="@style/myButton"
-            android:onClick="studentList"
-            android:text="@string/student_list" />
-
-        <Button
-            style="@style/myButton"
-            android:onClick="audience"
-            android:text="@string/audience" />
-
-        <Button
-            style="@style/myButton"
-            android:onClick="updateAssistants"
-            android:text="@string/updateAssistants" />
+            android:enabled="false"
+            android:onClick="addAssistants"
+            android:text="@string/add" />
 
     </LinearLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -20,4 +20,10 @@
     <string name="notes">تسجيل ملاحظات</string>
     <string name="absence">الغياب</string>
     <string name="zero">0</string>
+    <string name="teacher">معلم</string>
+    <string name="assistance">مساعد</string>
+    <string name="delete_assistants">حذف مساعد</string>
+    <string name="add_assistants">إضافة مساعد</string>
+    <string name="add">إضافة</string>
+    <string name="updateAssistants">تعديل المساعدين</string>
 </resources>

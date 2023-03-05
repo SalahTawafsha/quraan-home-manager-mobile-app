@@ -44,4 +44,9 @@ public class HomeActivity extends AppCompatActivity {
         Intent intent = new Intent(this, AbsenceActivity.class);
         startActivity(intent);
     }
+
+    public void updateAssistants(View view) {
+        Intent intent = new Intent(this, SelectAssistantsActivity.class);
+        startActivity(intent);
+    }
 }

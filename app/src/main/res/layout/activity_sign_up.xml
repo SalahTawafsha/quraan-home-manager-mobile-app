@@ -46,6 +46,34 @@
             android:hint="@string/rewrite_password"
             android:inputType="textPassword" />
 
+        <RadioGroup
+            android:background="@drawable/edit_text"
+            android:layout_width="200dp"
+            android:layout_height="50dp"
+            android:layout_margin="10dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:checked="true"
+                android:id="@+id/teacher"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="10dp"
+                android:text="@string/teacher"
+                android:textColor="#FFFFFF"
+                android:textSize="16sp" />
+
+            <RadioButton
+                android:id="@+id/assistance"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:text="@string/assistance"
+                android:textColor="#FFFFFF"
+                android:textSize="16sp" />
+        </RadioGroup>
+
         <Button
             android:id="@+id/button3"
             style="@style/myButton"
