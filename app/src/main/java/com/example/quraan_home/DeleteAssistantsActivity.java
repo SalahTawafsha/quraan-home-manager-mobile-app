@@ -20,7 +20,6 @@ import java.util.List;
 import java.util.Objects;
 
 import entities.Assistance;
-import entities.Student;
 
 public class DeleteAssistantsActivity extends AppCompatActivity {
     private ListView assistants;
