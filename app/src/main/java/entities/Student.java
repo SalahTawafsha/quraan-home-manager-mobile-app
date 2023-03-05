@@ -13,7 +13,7 @@ public class Student extends Person {
         datesOfAbsence = new ArrayList<>();
     }
 
-    public Student(String name, String teacherName, int absenceCount, ArrayList<Date> datesOfAbsence) {
+    public Student(String name, String teacherName, ArrayList<Date> datesOfAbsence) {
         super(name);
         this.teacherName = teacherName;
         this.datesOfAbsence = datesOfAbsence;
@@ -30,7 +30,7 @@ public class Student extends Person {
     public void setTeacherName(String teacherName) {
         this.teacherName = teacherName;
     }
-    
+
     public void addAbsence() {
         datesOfAbsence.add(new Date());
     }
