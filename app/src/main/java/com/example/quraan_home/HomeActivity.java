@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 
 public class HomeActivity extends AppCompatActivity {
     private SharedPreferences.Editor editor;
@@ -21,6 +22,11 @@ public class HomeActivity extends AppCompatActivity {
                 , Context.MODE_PRIVATE);
 
         editor = sharedPref.edit();
+        Button updateAssistants = findViewById(R.id.updateAssistants);
+
+        if(!getIntent().getBooleanExtra("isTeacher", false)){
+            updateAssistants.setVisibility(View.GONE);
+        }
     }
 
     @Override

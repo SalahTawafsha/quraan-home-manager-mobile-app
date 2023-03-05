@@ -62,6 +62,7 @@ public class LoginActivity extends Activity {
                     editor.putString("logInID", name.getText().toString());
                     editor.commit();
                     Intent intent = new Intent(this, HomeActivity.class);
+                    intent.putExtra("isTeacher", true);
                     startActivity(intent);
                 } else
                     Toast.makeText(this, "كلمة السر خاطئة", Toast.LENGTH_SHORT).show();
@@ -72,10 +73,15 @@ public class LoginActivity extends Activity {
                             if (a != null) {
                                 String password = a.getPassword();
                                 if (this.password.getText().toString().equals(password)) {
-                                    editor.putString("logInID", a.getTeacherName());
-                                    editor.commit();
-                                    Intent intent = new Intent(this, HomeActivity.class);
-                                    startActivity(intent);
+                                    if (!a.getTeacherName().isEmpty()) {
+                                        editor.putString("logInID", a.getTeacherName());
+                                        editor.commit();
+                                        Intent intent = new Intent(this, HomeActivity.class);
+                                        intent.putExtra("isTeacher", false);
+                                        startActivity(intent);
+                                    } else
+                                        Toast.makeText(this, "لا يمكنك تسجيل الدخول.\nلست مسجلاً لدى اي مدرس"
+                                                , Toast.LENGTH_SHORT).show();
                                 } else
                                     Toast.makeText(this, "كلمة السر خاطئة", Toast.LENGTH_SHORT).show();
                             } else

@@ -39,6 +39,7 @@
             android:text="@string/audience" />
 
         <Button
+            android:id="@+id/updateAssistants"
             style="@style/myButton"
             android:onClick="updateAssistants"
             android:text="@string/updateAssistants" />
