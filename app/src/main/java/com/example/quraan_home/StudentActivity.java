@@ -20,6 +20,8 @@ public class StudentActivity extends AppCompatActivity {
     }
 
     public void notes(View view) {
+        Intent intent = new Intent(this, NotesActivity.class);
+        startActivity(intent);
     }
 
     public void recitation(View view) {
