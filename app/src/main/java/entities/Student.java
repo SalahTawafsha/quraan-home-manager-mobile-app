@@ -7,6 +7,8 @@ public class Student extends Person {
     private String teacherName;
     private final ArrayList<Date> datesOfAbsence;
     private final ArrayList<String> pagesMemorized;
+    private final ArrayList<String> recitation;
+
     private String notes = "";
 
     public Student(String name, String teacherName) {
@@ -14,6 +16,8 @@ public class Student extends Person {
         this.teacherName = teacherName;
         datesOfAbsence = new ArrayList<>();
         pagesMemorized = new ArrayList<>();
+        recitation = new ArrayList<>();
+
     }
 
     public Student(String name, String teacherName, ArrayList<Date> datesOfAbsence, ArrayList<String> pagesMemorized, String notes) {
@@ -21,12 +25,14 @@ public class Student extends Person {
         this.teacherName = teacherName;
         this.datesOfAbsence = datesOfAbsence;
         this.pagesMemorized = pagesMemorized;
+        recitation = new ArrayList<>();
         this.notes = notes;
     }
 
     public Student() {
         datesOfAbsence = new ArrayList<>();
         pagesMemorized = new ArrayList<>();
+        recitation = new ArrayList<>();
     }
 
     public String getTeacherName() {
@@ -55,5 +61,9 @@ public class Student extends Person {
 
     public void setNotes(String notes) {
         this.notes = notes;
+    }
+
+    public ArrayList<String> getRecitation() {
+        return recitation;
     }
 }

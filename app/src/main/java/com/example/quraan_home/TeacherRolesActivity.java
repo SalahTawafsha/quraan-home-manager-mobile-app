@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -19,7 +20,6 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
@@ -59,8 +59,10 @@ public class TeacherRolesActivity extends AppCompatActivity {
     }
 
     private void loadRules() {
-        database.child("teacher").child(sharedPref.getString("logInID", ""))
+        database.child("teachers").child(sharedPref.getString("logInID", ""))
                 .get().addOnCompleteListener(task -> {
+                    if (task.getResult().getValue(Teacher.class) == null)
+                        Log.e("test", "null");
                     rules = Objects.requireNonNull(task.getResult().getValue(Teacher.class)).getRules();
 
                     ArrayAdapter<String> adapter =
@@ -80,14 +82,14 @@ public class TeacherRolesActivity extends AppCompatActivity {
         database.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                if (snapshot.child("teacher").hasChild(ruleName.getText().toString())) {
+                if (snapshot.child("teachers").hasChild(ruleName.getText().toString())) {
                     Toast.makeText(TeacherRolesActivity.this, "هذا الحكم موجود بالفعل", Toast.LENGTH_SHORT).show();
                     ruleName.getText().clear();
                 } else {
                     rules.add(ruleName.getText().toString());
-                    database.child("teacher").child(sharedPref.getString("logInID", "")).child("rules").setValue(rules);
+                    database.child("teachers").child(sharedPref.getString("logInID", "")).child("rules").setValue(rules);
                     Toast.makeText(TeacherRolesActivity.this, "تمت الاضافة", Toast.LENGTH_SHORT).show();
-                    ArrayAdapter<String> adapter = new ArrayAdapter<>(this, androidx.appcompat.R.layout.support_simple_spinner_dropdown_item, rules);
+                    setAdapter();
                 }
             }
 
@@ -99,8 +101,13 @@ public class TeacherRolesActivity extends AppCompatActivity {
 
     }
 
+    private void setAdapter() {
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, androidx.appcompat.R.layout.support_simple_spinner_dropdown_item, rules);
+        list.setAdapter(adapter);
+    }
+
     public void delete(View view) {
-        database.child("teacher").child(selector).removeValue();
+        database.child("teachers").child(selector).removeValue();
         delete.setEnabled(false);
         loadRules();
     }
