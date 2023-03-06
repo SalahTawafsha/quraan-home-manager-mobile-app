@@ -3,6 +3,7 @@ package com.example.quraan_home;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.ColorStateList;
 import android.graphics.Color;
@@ -10,67 +11,68 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.CheckBox;
 import android.widget.LinearLayout;
+import android.widget.Toast;
 
-import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.ArrayList;
-import java.util.List;
 import java.util.Objects;
 
 import entities.Student;
 
-public class AbsenceActivity extends AppCompatActivity {
-    private LinearLayout students;
+public class MemorizationActivity extends AppCompatActivity {
+    private LinearLayout surah;
     private final DatabaseReference database = FirebaseDatabase.getInstance().getReference();
     private SharedPreferences sharedPref;
-    List<Student> studentList = new ArrayList<>();
+    private Student student;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_absence);
+        setContentView(R.layout.activity_memorization);
 
-        students = findViewById(R.id.students_audience);
+        surah = findViewById(R.id.surah);
 
         sharedPref = getSharedPreferences(
                 getString(R.string.login)
                 , Context.MODE_PRIVATE);
 
-        loadStudents();
+        String s = getString(R.string.surah);
 
-    }
+        String[] lines = s.split("[,]");
 
-    private void loadStudents() {
-        database.child("student").orderByChild("teacherName").equalTo(sharedPref.getString("logInID", ""))
+        database.child("student").child(sharedPref.getString("currStudent", ""))
                 .get().addOnCompleteListener(task -> {
-                    for (DataSnapshot ds : task.getResult().getChildren()) {
+                    student = task.getResult().getValue(Student.class);
+                    for (String line : lines) {
                         CheckBox checkBox = new CheckBox(this);
                         checkBox.setId(View.AUTOFILL_TYPE_NONE);
                         checkBox.setLayoutDirection(View.LAYOUT_DIRECTION_RTL);
-                        checkBox.setButtonTintList(ColorStateList.valueOf(Color.WHITE));
                         checkBox.setTextColor(Color.WHITE);
+                        if (student.getPagesMemorized().contains(Integer.valueOf(line.substring(0, line.indexOf(':')).trim())))
+                            checkBox.setChecked(true);
+                        checkBox.setButtonTintList(ColorStateList.valueOf(Color.WHITE));
                         checkBox.setTextSize(20);
                         checkBox.setPadding(0, 25, 0, 25);
-                        Student s = Objects.requireNonNull(ds.getValue(Student.class));
-                        studentList.add(s);
-                        String text = "(" + s.getDatesOfAbsence().size() + ") " + s.getName();
-                        checkBox.setText(text);
-                        checkBox.setChecked(true);
+                        checkBox.setText(line);
                         checkBox.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT));
-                        students.addView(checkBox);
+                        surah.addView(checkBox);
                     }
                 });
+
     }
 
     public void save(View view) {
-        for (int i = 0; i < students.getChildCount(); i++)
-            if (!((CheckBox) students.getChildAt(i)).isChecked()) {
-                String[] tokens = ((CheckBox) students.getChildAt(i)).getText().toString().split("[()]");
-                studentList.get(i).addAbsence();
-                database.child("student").child(tokens[2].trim()).setValue(studentList.get(i));
+        ArrayList<Integer> pagesMemorized = new ArrayList<>();
+        for (int i = 0; i < surah.getChildCount(); i++)
+            if (((CheckBox) surah.getChildAt(i)).isChecked()) {
+                String[] tokens = ((CheckBox) surah.getChildAt(i)).getText().toString().split("[:]");
+                pagesMemorized.add(Integer.valueOf(tokens[0]));
             }
-        finish();
+        database.child("student").child(sharedPref.getString("currStudent", ""))
+                .child("pagesMemorized").setValue(pagesMemorized);
+
+        Toast.makeText(this, "تم الحفظ", Toast.LENGTH_SHORT).show();
     }
 }

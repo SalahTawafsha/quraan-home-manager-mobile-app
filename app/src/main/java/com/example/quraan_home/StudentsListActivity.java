@@ -6,7 +6,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.util.Log;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
@@ -44,7 +43,7 @@ public class StudentsListActivity extends AppCompatActivity {
         list.setOnItemClickListener((adapterView, view, i, l) -> {
             editor.putString("currStudent", students.get(i));
             editor.commit();
-            Intent intent = new Intent(this, StudentPageActivity.class);
+            Intent intent = new Intent(this, StudentActivity.class);
             startActivity(intent);
         });
     }

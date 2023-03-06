@@ -6,7 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
-public class StudentPageActivity extends AppCompatActivity {
+public class StudentActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,5 +26,7 @@ public class StudentPageActivity extends AppCompatActivity {
     }
 
     public void memorizing(View view) {
+        Intent intent = new Intent(this, MemorizationActivity.class);
+        startActivity(intent);
     }
 }
