@@ -15,7 +15,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import entities.Assistance;
 import entities.Teacher;
 
-public class LoginActivity extends Activity {
+public class TeacherLoginActivity extends Activity {
     private EditText name;
     private EditText password;
     private SharedPreferences.Editor editor;
@@ -25,7 +25,7 @@ public class LoginActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login);
+        setContentView(R.layout.activity_teacher_login);
 
         name = findViewById(R.id.loginTeacherName);
         password = findViewById(R.id.loginPassword);
@@ -38,13 +38,13 @@ public class LoginActivity extends Activity {
 
 
         if (!sharedPref.getString("logInID", "").equals("")) {
-            Intent intent = new Intent(this, HomeActivity.class);
+            Intent intent = new Intent(this, TeacherHomeActivity.class);
             startActivity(intent);
         }
     }
 
     public void signUp(View view) {
-        Intent intent = new Intent(this, SignUpActivity.class);
+        Intent intent = new Intent(this, TeacherSignUpActivity.class);
         intent.putExtra("type", "add");
         startActivity(intent);
     }
@@ -61,7 +61,7 @@ public class LoginActivity extends Activity {
                 if (this.password.getText().toString().equals(password)) {
                     editor.putString("logInID", name.getText().toString());
                     editor.commit();
-                    Intent intent = new Intent(this, HomeActivity.class);
+                    Intent intent = new Intent(this, TeacherHomeActivity.class);
                     intent.putExtra("isTeacher", true);
                     startActivity(intent);
                 } else
@@ -76,7 +76,7 @@ public class LoginActivity extends Activity {
                                     if (!a.getTeacherName().isEmpty()) {
                                         editor.putString("logInID", a.getTeacherName());
                                         editor.commit();
-                                        Intent intent = new Intent(this, HomeActivity.class);
+                                        Intent intent = new Intent(this, TeacherHomeActivity.class);
                                         intent.putExtra("isTeacher", false);
                                         startActivity(intent);
                                     } else

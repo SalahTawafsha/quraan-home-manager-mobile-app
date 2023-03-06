@@ -21,7 +21,7 @@ import java.util.Objects;
 
 import entities.Student;
 
-public class AbsenceActivity extends AppCompatActivity {
+public class TeacherAbsenceActivity extends AppCompatActivity {
     private LinearLayout students;
     private final DatabaseReference database = FirebaseDatabase.getInstance().getReference();
     private SharedPreferences sharedPref;
@@ -30,7 +30,7 @@ public class AbsenceActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_absence);
+        setContentView(R.layout.activity_teacher_absence);
 
         students = findViewById(R.id.students_audience);
 

@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/background"
-    tools:context=".NotesActivity">
+    tools:context=".StudentHomeActivity">
 
     <LinearLayout
         android:id="@+id/constraintLayout"
@@ -23,21 +23,25 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.5">
 
-        <EditText
-            android:gravity="center"
-            android:id="@+id/notes"
-            android:layout_width="318dp"
-            android:layout_height="276dp"
-            android:textColor="#FFFFFF"
-            android:autofillHints=""
-            android:background="#86777777"
-            android:inputType="textMultiLine"
-            tools:ignore="LabelFor" />
+        <Button
+            style="@style/myButton"
+            android:onClick="memorizing"
+            android:text="@string/quran_Memorizing" />
 
         <Button
-            android:onClick="save"
-            android:text="@string/save"
-            style="@style/myButton" />
+            style="@style/myButton"
+            android:onClick="recitation"
+            android:text="@string/recitation" />
+
+        <Button
+            style="@style/myButton"
+            android:onClick="notes"
+            android:text="@string/notes" />
+
+        <Button
+            style="@style/myButton"
+            android:onClick="absence"
+            android:text="@string/absence" />
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

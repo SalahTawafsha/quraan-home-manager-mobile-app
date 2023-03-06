@@ -1,6 +1,7 @@
 package com.example.quraan_home;
 
 import androidx.appcompat.app.AppCompatActivity;
+
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -10,15 +11,18 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.Toast;
+
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
+
 import entities.Assistance;
 
-public class AddAssistantsActivity extends AppCompatActivity {
+public class AssistantAddActivity extends AppCompatActivity {
     private ListView assistants;
     private Button add;
     private final DatabaseReference database = FirebaseDatabase.getInstance().getReference();
@@ -29,7 +33,7 @@ public class AddAssistantsActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_add_assistants);
+        setContentView(R.layout.activity_assistants_add);
 
         assistants = findViewById(R.id.list);
         add = findViewById(R.id.add);

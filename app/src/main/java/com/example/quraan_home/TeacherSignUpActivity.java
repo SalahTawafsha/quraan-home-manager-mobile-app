@@ -19,7 +19,7 @@ import entities.Assistance;
 import entities.Teacher;
 
 
-public class SignUpActivity extends AppCompatActivity {
+public class TeacherSignUpActivity extends AppCompatActivity {
     private RadioButton teacher;
     private EditText name;
     private EditText firstPass;
@@ -29,7 +29,7 @@ public class SignUpActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_sign_up);
+        setContentView(R.layout.activity_teacher_sign_up);
 
         name = findViewById(R.id.teacherName);
         firstPass = findViewById(R.id.firstPassword);
@@ -53,13 +53,13 @@ public class SignUpActivity extends AppCompatActivity {
                 @Override
                 public void onDataChange(@NonNull DataSnapshot snapshot) {
                     if (snapshot.child("teachers").hasChild(name.getText().toString()) || snapshot.child("assistants").hasChild(name.getText().toString()))
-                        Toast.makeText(SignUpActivity.this, "اسم المعلم تم تسجيله من قبل", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(TeacherSignUpActivity.this, "اسم المعلم تم تسجيله من قبل", Toast.LENGTH_SHORT).show();
                     else if (teacher.isChecked()) {
                         database.child("teachers").child(name.getText().toString()).setValue(new Teacher(name.getText().toString(), firstPass.getText().toString()));
-                        Toast.makeText(SignUpActivity.this, "تمت الاضافة", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(TeacherSignUpActivity.this, "تمت الاضافة", Toast.LENGTH_SHORT).show();
                     } else {
                         database.child("assistants").child(name.getText().toString()).setValue(new Assistance(name.getText().toString(), firstPass.getText().toString()));
-                        Toast.makeText(SignUpActivity.this, "تمت الاضافة", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(TeacherSignUpActivity.this, "تمت الاضافة", Toast.LENGTH_SHORT).show();
                     }
                 }
 

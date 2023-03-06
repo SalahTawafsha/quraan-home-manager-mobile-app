@@ -6,21 +6,21 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
-public class SelectAssistantsActivity extends AppCompatActivity {
+public class AssistantsSelectActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_select_assistants);
+        setContentView(R.layout.activity_assistants_select);
     }
 
     public void addAssistants(View view) {
-        Intent intent = new Intent(this, AddAssistantsActivity.class);
+        Intent intent = new Intent(this, AssistantAddActivity.class);
         startActivity(intent);
     }
 
     public void deleteAssistants(View view) {
-        Intent intent = new Intent(this, DeleteAssistantsActivity.class);
+        Intent intent = new Intent(this, AssistantDeleteActivity.class);
         startActivity(intent);
     }
 }

@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:background="@drawable/background"
     android:layout_height="match_parent"
-    tools:context=".DeleteAssistantsActivity">
+    tools:context=".AssistantsSelectActivity">
 
 
     <LinearLayout
@@ -24,19 +24,16 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <ListView
-            android:id="@+id/list"
-            android:background="@color/white"
-            android:layout_margin="10dp"
-            android:layout_width="match_parent"
-            android:layout_height="350dp"/>
 
         <Button
-            android:id="@+id/delete"
             style="@style/myButton"
-            android:enabled="false"
+            android:onClick="addAssistants"
+            android:text="@string/add_assistants" />
+
+        <Button
+            style="@style/myButton"
             android:onClick="deleteAssistants"
-            android:text="@string/delete" />
+            android:text="@string/delete_assistants" />
 
     </LinearLayout>
 

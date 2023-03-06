@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:background="@drawable/background"
     android:layout_height="match_parent"
-    tools:context=".MemorizationActivity">
+    tools:context=".StudentMemorizationActivity">
 
     <LinearLayout
         android:id="@+id/constraintLayout"
@@ -22,6 +22,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
+
         <ScrollView
             android:scrollbarThumbVertical="@drawable/scrollbar"
             android:scrollbarSize="20dp"

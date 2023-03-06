@@ -43,7 +43,7 @@ public class StudentsListActivity extends AppCompatActivity {
         list.setOnItemClickListener((adapterView, view, i, l) -> {
             editor.putString("currStudent", students.get(i));
             editor.commit();
-            Intent intent = new Intent(this, StudentActivity.class);
+            Intent intent = new Intent(this, StudentHomeActivity.class);
             startActivity(intent);
         });
     }

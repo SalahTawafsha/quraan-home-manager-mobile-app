@@ -9,13 +9,13 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-public class HomeActivity extends AppCompatActivity {
+public class TeacherHomeActivity extends AppCompatActivity {
     private SharedPreferences.Editor editor;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_home);
+        setContentView(R.layout.activity_teacher_home);
 
         SharedPreferences sharedPref = getSharedPreferences(
                 getString(R.string.login)
@@ -24,7 +24,7 @@ public class HomeActivity extends AppCompatActivity {
         editor = sharedPref.edit();
         Button updateAssistants = findViewById(R.id.updateAssistants);
 
-        if(!getIntent().getBooleanExtra("isTeacher", false)){
+        if (!getIntent().getBooleanExtra("isTeacher", false)) {
             updateAssistants.setVisibility(View.GONE);
         }
     }
@@ -37,7 +37,7 @@ public class HomeActivity extends AppCompatActivity {
     }
 
     public void updateStudents(View view) {
-        Intent intent = new Intent(this, UpdateActivity.class);
+        Intent intent = new Intent(this, StudentsUpdateActivity.class);
         startActivity(intent);
     }
 
@@ -47,12 +47,12 @@ public class HomeActivity extends AppCompatActivity {
     }
 
     public void audience(View view) {
-        Intent intent = new Intent(this, AbsenceActivity.class);
+        Intent intent = new Intent(this, TeacherAbsenceActivity.class);
         startActivity(intent);
     }
 
     public void updateAssistants(View view) {
-        Intent intent = new Intent(this, SelectAssistantsActivity.class);
+        Intent intent = new Intent(this, AssistantsSelectActivity.class);
         startActivity(intent);
     }
 }

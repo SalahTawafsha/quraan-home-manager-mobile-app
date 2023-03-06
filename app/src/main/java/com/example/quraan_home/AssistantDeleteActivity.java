@@ -21,7 +21,7 @@ import java.util.Objects;
 
 import entities.Assistance;
 
-public class DeleteAssistantsActivity extends AppCompatActivity {
+public class AssistantDeleteActivity extends AppCompatActivity {
     private ListView assistants;
     private Button delete;
     private final DatabaseReference database = FirebaseDatabase.getInstance().getReference();
@@ -32,7 +32,7 @@ public class DeleteAssistantsActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_delete_assistants);
+        setContentView(R.layout.activity_assistants_delete);
 
         assistants = findViewById(R.id.list);
         delete = findViewById(R.id.delete);

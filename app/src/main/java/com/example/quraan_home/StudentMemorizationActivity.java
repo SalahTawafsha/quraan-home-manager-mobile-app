@@ -19,7 +19,7 @@ import java.util.ArrayList;
 
 import entities.Student;
 
-public class MemorizationActivity extends AppCompatActivity {
+public class StudentMemorizationActivity extends AppCompatActivity {
     private LinearLayout surah;
     private final DatabaseReference database = FirebaseDatabase.getInstance().getReference();
     private SharedPreferences sharedPref;
@@ -28,7 +28,7 @@ public class MemorizationActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_memorization);
+        setContentView(R.layout.activity_student_memorization);
 
         surah = findViewById(R.id.surah);
 

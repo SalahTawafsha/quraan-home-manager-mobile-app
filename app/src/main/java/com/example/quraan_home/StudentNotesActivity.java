@@ -4,13 +4,9 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
 import android.content.SharedPreferences;
-import android.content.res.ColorStateList;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.CheckBox;
 import android.widget.EditText;
-import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import com.google.firebase.database.DatabaseReference;
@@ -18,7 +14,7 @@ import com.google.firebase.database.FirebaseDatabase;
 
 import entities.Student;
 
-public class NotesActivity extends AppCompatActivity {
+public class StudentNotesActivity extends AppCompatActivity {
     private EditText notes;
     private final DatabaseReference database = FirebaseDatabase.getInstance().getReference();
     private SharedPreferences sharedPref;
@@ -27,7 +23,7 @@ public class NotesActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_notes);
+        setContentView(R.layout.activity_student_notes);
 
         notes = findViewById(R.id.notes);
 

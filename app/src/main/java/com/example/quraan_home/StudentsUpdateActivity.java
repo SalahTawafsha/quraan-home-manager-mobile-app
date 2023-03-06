@@ -12,17 +12,20 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Toast;
+
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
+
 import entities.Student;
 
-public class UpdateActivity extends AppCompatActivity {
+public class StudentsUpdateActivity extends AppCompatActivity {
     private EditText studentName;
     private ListView list;
     private final DatabaseReference database = FirebaseDatabase.getInstance().getReference();
@@ -76,13 +79,12 @@ public class UpdateActivity extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 if (snapshot.child("student").hasChild(studentName.getText().toString())) {
-                    Toast.makeText(UpdateActivity.this, "هذا الطالب مسجل بالفعل مع المعلم: "
+                    Toast.makeText(StudentsUpdateActivity.this, "هذا الطالب مسجل بالفعل مع المعلم: "
                             + Objects.requireNonNull(snapshot.child("student").child(studentName.getText().toString()).getValue(Student.class)).getTeacherName(), Toast.LENGTH_SHORT).show();
                     studentName.getText().clear();
-                }
-                else {
+                } else {
                     database.child("student").child(studentName.getText().toString()).setValue(new Student(studentName.getText().toString(), sharedPref.getString("logInID", "")));
-                    Toast.makeText(UpdateActivity.this, "تمت الاضافة", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(StudentsUpdateActivity.this, "تمت الاضافة", Toast.LENGTH_SHORT).show();
                     loadStudents();
                 }
             }

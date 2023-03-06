@@ -6,12 +6,12 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
-public class StudentActivity extends AppCompatActivity {
+public class StudentHomeActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_student_page);
+        setContentView(R.layout.activity_student_home);
     }
 
     public void absence(View view) {
@@ -20,7 +20,7 @@ public class StudentActivity extends AppCompatActivity {
     }
 
     public void notes(View view) {
-        Intent intent = new Intent(this, NotesActivity.class);
+        Intent intent = new Intent(this, StudentNotesActivity.class);
         startActivity(intent);
     }
 
@@ -28,7 +28,7 @@ public class StudentActivity extends AppCompatActivity {
     }
 
     public void memorizing(View view) {
-        Intent intent = new Intent(this, MemorizationActivity.class);
+        Intent intent = new Intent(this, StudentMemorizationActivity.class);
         startActivity(intent);
     }
 }
