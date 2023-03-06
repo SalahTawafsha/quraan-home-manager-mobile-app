@@ -48,7 +48,7 @@ public class MemorizationActivity extends AppCompatActivity {
                         checkBox.setId(View.AUTOFILL_TYPE_NONE);
                         checkBox.setLayoutDirection(View.LAYOUT_DIRECTION_RTL);
                         checkBox.setTextColor(Color.WHITE);
-                        if (student.getPagesMemorized().contains(Integer.valueOf(line.substring(0, line.indexOf(':')).trim())))
+                        if (student.getPagesMemorized().contains(line))
                             checkBox.setChecked(true);
                         checkBox.setButtonTintList(ColorStateList.valueOf(Color.WHITE));
                         checkBox.setTextSize(20);
@@ -62,11 +62,10 @@ public class MemorizationActivity extends AppCompatActivity {
     }
 
     public void save(View view) {
-        ArrayList<Integer> pagesMemorized = new ArrayList<>();
+        ArrayList<String> pagesMemorized = new ArrayList<>();
         for (int i = 0; i < surah.getChildCount(); i++)
             if (((CheckBox) surah.getChildAt(i)).isChecked()) {
-                String[] tokens = ((CheckBox) surah.getChildAt(i)).getText().toString().split("[:]");
-                pagesMemorized.add(Integer.valueOf(tokens[0]));
+                pagesMemorized.add(((CheckBox) surah.getChildAt(i)).getText().toString());
             }
         database.child("student").child(sharedPref.getString("currStudent", ""))
                 .child("pagesMemorized").setValue(pagesMemorized);
