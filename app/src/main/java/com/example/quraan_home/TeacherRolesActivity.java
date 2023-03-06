@@ -24,6 +24,7 @@ import java.util.List;
 import java.util.Objects;
 
 import entities.Student;
+import entities.Teacher;
 
 public class TeacherRolesActivity extends AppCompatActivity {
     private EditText ruleName;
@@ -32,6 +33,7 @@ public class TeacherRolesActivity extends AppCompatActivity {
     private SharedPreferences sharedPref;
     private String selector;
     private Button delete;
+    private ArrayList<String> rules;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,14 +58,12 @@ public class TeacherRolesActivity extends AppCompatActivity {
     }
 
     private void loadRules() {
-        database.child("student").orderByChild("teacherName").equalTo(sharedPref.getString("logInID", ""))
+        database.child("teacher").child(sharedPref.getString("logInID", ""))
                 .get().addOnCompleteListener(task -> {
-                    List<String> students = new ArrayList<>();
-                    for (DataSnapshot ds : task.getResult().getChildren())
-                        students.add(Objects.requireNonNull(ds.getValue(Student.class)).getName());
+                    rules = Objects.requireNonNull(task.getResult().getValue(Teacher.class)).getRules();
 
                     ArrayAdapter<String> adapter =
-                            new ArrayAdapter<>(this, androidx.appcompat.R.layout.support_simple_spinner_dropdown_item, students);
+                            new ArrayAdapter<>(this, androidx.appcompat.R.layout.support_simple_spinner_dropdown_item, rules);
                     list.setAdapter(adapter);
 
                 });
@@ -71,19 +71,18 @@ public class TeacherRolesActivity extends AppCompatActivity {
 
     public void addRule(View view) {
         if (ruleName.getText().toString().isEmpty()) {
-            Toast.makeText(this, "لا يمكن ان يكون اسم الطالب فارغ", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "لا يمكن ان يكون اسم الحكم فارغ", Toast.LENGTH_SHORT).show();
             return;
         }
 
         database.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                if (snapshot.child("student").hasChild(ruleName.getText().toString())) {
-                    Toast.makeText(TeacherRolesActivity.this, "هذا الطالب مسجل بالفعل مع المعلم: "
-                            + Objects.requireNonNull(snapshot.child("student").child(ruleName.getText().toString()).getValue(Student.class)).getTeacherName(), Toast.LENGTH_SHORT).show();
+                if (snapshot.child("teacher").hasChild(ruleName.getText().toString())) {
+                    Toast.makeText(TeacherRolesActivity.this, "هذا الحكم موجود بالفعل", Toast.LENGTH_SHORT).show();
                     ruleName.getText().clear();
                 } else {
-                    database.child("student").child(ruleName.getText().toString()).setValue(new Student(ruleName.getText().toString(), sharedPref.getString("logInID", "")));
+                    database.child("teacher").child(ruleName.getText().toString()).setValue(new Student(ruleName.getText().toString(), sharedPref.getString("logInID", "")));
                     Toast.makeText(TeacherRolesActivity.this, "تمت الاضافة", Toast.LENGTH_SHORT).show();
                     loadRules();
                 }
@@ -98,7 +97,7 @@ public class TeacherRolesActivity extends AppCompatActivity {
     }
 
     public void delete(View view) {
-        database.child("student").child(selector).removeValue();
+        database.child("teacher").child(selector).removeValue();
         delete.setEnabled(false);
         loadRules();
     }
