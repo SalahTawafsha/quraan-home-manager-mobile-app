@@ -40,7 +40,6 @@
     <style name="label">
         <item name="android:background">#00000000</item>
         <item name="android:layout_width">wrap_content</item>
-<!--        <item name="fontFamily">casual</item>-->
         <item name="android:layout_height">50dp</item>
         <item name="android:ems">10</item>
         <item name="android:layout_margin">10dp</item>

@@ -55,4 +55,9 @@ public class TeacherHomeActivity extends AppCompatActivity {
         Intent intent = new Intent(this, AssistantsSelectActivity.class);
         startActivity(intent);
     }
+
+    public void updateRules(View view) {
+        Intent intent = new Intent(this, TeacherRolesActivity.class);
+        startActivity(intent);
+    }
 }

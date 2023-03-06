@@ -23,6 +23,16 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
+        <TextView
+            style="@style/label"
+            android:text="@string/teacherHomePage" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="171dp"
+            android:src="@drawable/login_icon"
+            tools:ignore="ContentDescription" />
+
         <Button
             style="@style/myButton"
             android:onClick="updateStudents"
@@ -43,6 +53,11 @@
             style="@style/myButton"
             android:onClick="updateAssistants"
             android:text="@string/updateAssistants" />
+
+        <Button
+            style="@style/myButton"
+            android:onClick="updateRules"
+            android:text="@string/roles_update" />
 
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -5,53 +5,52 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/background"
-    tools:context=".StudentHomeActivity">
+    tools:context=".TeacherRolesActivity">
+
 
     <LinearLayout
         android:id="@+id/constraintLayout"
         android:layout_width="349dp"
         android:layout_height="642dp"
         android:layout_marginStart="26dp"
+        android:layout_marginTop="50dp"
         android:layout_marginEnd="26dp"
+        android:layout_marginBottom="75dp"
         android:background="@color/black"
         android:gravity="center"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.5">
+        app:layout_constraintTop_toTopOf="parent">
 
-        <TextView
-            style="@style/label"
-            android:id="@+id/student_home" />
-
-        <ImageView
+        <EditText
+            android:id="@+id/rule_name"
+            style="@style/EditText"
             android:layout_width="wrap_content"
-            android:layout_height="171dp"
-            android:src="@drawable/login_icon"
-            tools:ignore="ContentDescription" />
+            android:layout_height="56dp"
+            android:hint="@string/role_name"
+            android:inputType="textPersonName"
+            tools:ignore="Autofill,LabelFor" />
 
         <Button
             style="@style/myButton"
-            android:onClick="memorizing"
-            android:text="@string/quran_Memorizing" />
+            android:onClick="addRule"
+            android:text="@string/rules_add" />
+
+        <ListView
+            android:id="@+id/rules"
+            android:background="@color/white"
+            android:layout_width="300dp"
+            android:layout_height="418dp" />
 
         <Button
+            android:id="@+id/deleteRule"
             style="@style/myButton"
-            android:onClick="recitation"
-            android:text="@string/recitation" />
+            android:onClick="delete"
+            android:enabled="false"
+            android:text="@string/delete" />
 
-        <Button
-            style="@style/myButton"
-            android:onClick="notes"
-            android:text="@string/notes" />
-
-        <Button
-            style="@style/myButton"
-            android:onClick="absence"
-            android:text="@string/absence" />
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
