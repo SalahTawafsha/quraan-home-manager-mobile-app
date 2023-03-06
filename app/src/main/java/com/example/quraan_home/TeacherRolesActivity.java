@@ -23,7 +23,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
-import entities.Student;
 import entities.Teacher;
 
 public class TeacherRolesActivity extends AppCompatActivity {
@@ -33,7 +32,8 @@ public class TeacherRolesActivity extends AppCompatActivity {
     private SharedPreferences sharedPref;
     private String selector;
     private Button delete;
-    private ArrayList<String> rules;
+    private Button add;
+    private List<String> rules;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,6 +43,7 @@ public class TeacherRolesActivity extends AppCompatActivity {
         ruleName = findViewById(R.id.rule_name);
         list = findViewById(R.id.rules);
         delete = findViewById(R.id.deleteRule);
+        add = findViewById(R.id.add_rule);
 
         sharedPref = getSharedPreferences(
                 getString(R.string.login)
@@ -65,6 +66,7 @@ public class TeacherRolesActivity extends AppCompatActivity {
                     ArrayAdapter<String> adapter =
                             new ArrayAdapter<>(this, androidx.appcompat.R.layout.support_simple_spinner_dropdown_item, rules);
                     list.setAdapter(adapter);
+                    add.setEnabled(true);
 
                 });
     }
@@ -82,9 +84,10 @@ public class TeacherRolesActivity extends AppCompatActivity {
                     Toast.makeText(TeacherRolesActivity.this, "هذا الحكم موجود بالفعل", Toast.LENGTH_SHORT).show();
                     ruleName.getText().clear();
                 } else {
-                    database.child("teacher").child(ruleName.getText().toString()).setValue(new Student(ruleName.getText().toString(), sharedPref.getString("logInID", "")));
+                    rules.add(ruleName.getText().toString());
+                    database.child("teacher").child(sharedPref.getString("logInID", "")).child("rules").setValue(rules);
                     Toast.makeText(TeacherRolesActivity.this, "تمت الاضافة", Toast.LENGTH_SHORT).show();
-                    loadRules();
+                    ArrayAdapter<String> adapter = new ArrayAdapter<>(this, androidx.appcompat.R.layout.support_simple_spinner_dropdown_item, rules);
                 }
             }
 
