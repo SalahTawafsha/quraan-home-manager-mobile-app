@@ -54,7 +54,9 @@ public class MemorizationActivity extends AppCompatActivity {
                         checkBox.setTextSize(20);
                         checkBox.setPadding(0, 25, 0, 25);
                         checkBox.setText(line);
-                        checkBox.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT));
+                        checkBox.setLayoutParams(new LinearLayout.LayoutParams(
+                                LinearLayout.LayoutParams.WRAP_CONTENT
+                                , LinearLayout.LayoutParams.WRAP_CONTENT));
                         surah.addView(checkBox);
                     }
                 });
