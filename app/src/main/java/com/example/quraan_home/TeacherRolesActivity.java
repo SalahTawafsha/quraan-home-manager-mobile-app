@@ -84,11 +84,12 @@ public class TeacherRolesActivity extends AppCompatActivity {
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 if (snapshot.child("teachers").hasChild(ruleName.getText().toString())) {
                     Toast.makeText(TeacherRolesActivity.this, "هذا الحكم موجود بالفعل", Toast.LENGTH_SHORT).show();
-                    ruleName.getText().clear();
                 } else {
                     rules.add(ruleName.getText().toString());
                     database.child("teachers").child(sharedPref.getString("logInID", "")).child("rules").setValue(rules);
                     Toast.makeText(TeacherRolesActivity.this, "تمت الاضافة", Toast.LENGTH_SHORT).show();
+                    ruleName.getText().clear();
+                    ruleName.getText().clear();
                     setAdapter();
                 }
             }

@@ -40,6 +40,7 @@
         </ScrollView>
 
         <Button
+            android:id="@+id/saveRecitation"
             style="@style/myButton"
             android:onClick="save"
             android:text="@string/save" />

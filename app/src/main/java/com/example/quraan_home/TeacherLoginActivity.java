@@ -50,16 +50,16 @@ public class TeacherLoginActivity extends Activity {
     }
 
     public void logIn(View view) {
-        if (name.getText().toString().isEmpty()) {
+        if (name.getText().toString().trim().isEmpty()) {
             Toast.makeText(this, "لا يمكن ان يكون اسم المعلم فارغ", Toast.LENGTH_SHORT).show();
             return;
         }
-        database.child("teachers").child(name.getText().toString()).get().addOnCompleteListener(task -> {
+        database.child("teachers").child(name.getText().toString().trim()).get().addOnCompleteListener(task -> {
             Teacher t = task.getResult().getValue(Teacher.class);
             if (t != null) {
                 String password = t.getPassword();
                 if (this.password.getText().toString().equals(password)) {
-                    editor.putString("logInID", name.getText().toString());
+                    editor.putString("logInID", name.getText().toString().trim());
                     editor.commit();
                     Intent intent = new Intent(this, TeacherHomeActivity.class);
                     intent.putExtra("isTeacher", true);
@@ -67,7 +67,7 @@ public class TeacherLoginActivity extends Activity {
                 } else
                     Toast.makeText(this, "كلمة السر خاطئة", Toast.LENGTH_SHORT).show();
             } else {
-                database.child("assistants").child(name.getText().toString())
+                database.child("assistants").child(name.getText().toString().trim())
                         .get().addOnCompleteListener(task1 -> {
                             Assistance a = task1.getResult().getValue(Assistance.class);
                             if (a != null) {

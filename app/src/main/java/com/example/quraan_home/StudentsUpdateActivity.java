@@ -81,10 +81,10 @@ public class StudentsUpdateActivity extends AppCompatActivity {
                 if (snapshot.child("student").hasChild(studentName.getText().toString())) {
                     Toast.makeText(StudentsUpdateActivity.this, "هذا الطالب مسجل بالفعل مع المعلم: "
                             + Objects.requireNonNull(snapshot.child("student").child(studentName.getText().toString()).getValue(Student.class)).getTeacherName(), Toast.LENGTH_SHORT).show();
-                    studentName.getText().clear();
                 } else {
                     database.child("student").child(studentName.getText().toString()).setValue(new Student(studentName.getText().toString(), sharedPref.getString("logInID", "")));
                     Toast.makeText(StudentsUpdateActivity.this, "تمت الاضافة", Toast.LENGTH_SHORT).show();
+                    studentName.getText().clear();
                     loadStudents();
                 }
             }

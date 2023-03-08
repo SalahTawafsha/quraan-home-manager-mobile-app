@@ -9,8 +9,10 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.firebase.database.DatabaseReference;
@@ -27,6 +29,7 @@ public class StudentRecitationActivity extends AppCompatActivity {
     private final DatabaseReference database = FirebaseDatabase.getInstance().getReference();
     private SharedPreferences sharedPref;
     private Student student;
+    private Button save;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,6 +37,7 @@ public class StudentRecitationActivity extends AppCompatActivity {
         setContentView(R.layout.activity_student_recitation);
 
         surah = findViewById(R.id.tajweed);
+        save = findViewById(R.id.saveRecitation);
 
         sharedPref = getSharedPreferences(
                 getString(R.string.login)
@@ -46,21 +50,36 @@ public class StudentRecitationActivity extends AppCompatActivity {
                 .get().addOnCompleteListener(task -> {
                     ArrayList<String> rules = Objects.requireNonNull(task.getResult().getValue(Teacher.class)).getRules();
                     Log.e("test", rules.toString());
-                    for (String line : rules) {
-                        CheckBox checkBox = new CheckBox(this);
-                        checkBox.setId(View.AUTOFILL_TYPE_NONE);
-                        checkBox.setLayoutDirection(View.LAYOUT_DIRECTION_RTL);
-                        checkBox.setTextColor(Color.WHITE);
-                        if (student.getRecitation().contains(line))
-                            checkBox.setChecked(true);
-                        checkBox.setButtonTintList(ColorStateList.valueOf(Color.WHITE));
-                        checkBox.setTextSize(20);
-                        checkBox.setPadding(0, 25, 0, 25);
-                        checkBox.setText(line);
-                        checkBox.setLayoutParams(new LinearLayout.LayoutParams(
+                    if (rules.size() > 0)
+                        for (String line : rules) {
+                            CheckBox checkBox = new CheckBox(this);
+                            checkBox.setId(View.AUTOFILL_TYPE_NONE);
+                            checkBox.setLayoutDirection(View.LAYOUT_DIRECTION_RTL);
+                            checkBox.setTextColor(Color.WHITE);
+                            if (student.getRecitation().contains(line))
+                                checkBox.setChecked(true);
+                            checkBox.setButtonTintList(ColorStateList.valueOf(Color.WHITE));
+                            checkBox.setTextSize(20);
+                            checkBox.setPadding(0, 25, 0, 25);
+                            checkBox.setText(line);
+                            checkBox.setLayoutParams(new LinearLayout.LayoutParams(
+                                    LinearLayout.LayoutParams.WRAP_CONTENT
+                                    , LinearLayout.LayoutParams.WRAP_CONTENT));
+                            surah.addView(checkBox);
+                        }
+                    else {
+                        TextView textView = new TextView(this);
+                        textView.setId(View.AUTOFILL_TYPE_NONE);
+                        textView.setLayoutDirection(View.LAYOUT_DIRECTION_RTL);
+                        textView.setTextColor(Color.WHITE);
+                        textView.setTextSize(20);
+                        textView.setPadding(0, 25, 0, 25);
+                        textView.setText("لم تقم باضافة اي حكم للتجويد،\nيجب ان تقوم باضفاتها من الصفحة الرئيسية");
+                        textView.setLayoutParams(new LinearLayout.LayoutParams(
                                 LinearLayout.LayoutParams.WRAP_CONTENT
                                 , LinearLayout.LayoutParams.WRAP_CONTENT));
-                        surah.addView(checkBox);
+                        surah.addView(textView);
+                        save.setEnabled(false);
                     }
                 });
 
