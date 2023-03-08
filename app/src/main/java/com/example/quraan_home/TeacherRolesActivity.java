@@ -30,7 +30,7 @@ public class TeacherRolesActivity extends AppCompatActivity {
     private ListView list;
     private final DatabaseReference database = FirebaseDatabase.getInstance().getReference();
     private SharedPreferences sharedPref;
-    private String selector;
+    private int selector;
     private Button delete;
     private Button add;
     private List<String> rules;
@@ -52,7 +52,7 @@ public class TeacherRolesActivity extends AppCompatActivity {
         loadRules();
 
         list.setOnItemClickListener((adapterView, view, i, l) -> {
-            selector = String.valueOf(adapterView.getAdapter().getItem(i));
+            selector = i;
             delete.setEnabled(true);
         });
 
@@ -108,7 +108,8 @@ public class TeacherRolesActivity extends AppCompatActivity {
     }
 
     public void delete(View view) {
-        database.child("teachers").child(selector).removeValue();
+        rules.remove(selector);
+        database.child("teachers").child(sharedPref.getString("logInID", "")).child("rules").setValue(rules);
         delete.setEnabled(false);
         loadRules();
     }
