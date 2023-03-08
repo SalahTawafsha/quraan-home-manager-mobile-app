@@ -60,4 +60,10 @@ public class TeacherHomeActivity extends AppCompatActivity {
         Intent intent = new Intent(this, TeacherRolesActivity.class);
         startActivity(intent);
     }
+
+    public void finish(View view) {
+        finish();
+        editor.putString("logInID", "");
+        editor.commit();
+    }
 }

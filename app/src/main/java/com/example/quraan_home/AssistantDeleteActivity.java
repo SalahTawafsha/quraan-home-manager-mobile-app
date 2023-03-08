@@ -68,4 +68,8 @@ public class AssistantDeleteActivity extends AppCompatActivity {
         delete.setEnabled(false);
         Toast.makeText(this, "تم الحذف !", Toast.LENGTH_SHORT).show();
     }
+
+    public void finish(View view) {
+        finish();
+    }
 }

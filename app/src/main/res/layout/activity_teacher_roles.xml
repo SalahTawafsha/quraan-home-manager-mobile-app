@@ -35,24 +35,34 @@
 
         <Button
             android:id="@+id/add_rule"
-            android:enabled="false"
             style="@style/myButton"
+            android:enabled="false"
             android:onClick="addRule"
             android:text="@string/rules_add" />
 
         <ListView
             android:id="@+id/rules"
-            android:background="@color/white"
             android:layout_width="300dp"
-            android:layout_height="418dp" />
+            android:layout_height="418dp"
+            android:background="@color/white" />
 
         <Button
             android:id="@+id/deleteRule"
             style="@style/myButton"
-            android:onClick="delete"
             android:enabled="false"
+            android:onClick="delete"
             android:text="@string/delete" />
 
     </LinearLayout>
 
+    <Button
+        style="@style/backButton"
+        android:onClick="finish"
+        android:text="@string/back"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout"
+        app:layout_constraintVertical_bias="0.5" />
 </androidx.constraintlayout.widget.ConstraintLayout>

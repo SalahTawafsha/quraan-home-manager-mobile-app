@@ -9,6 +9,7 @@
     tools:context=".TeacherSignUpActivity">
 
     <LinearLayout
+        android:id="@+id/constraintLayout"
         android:layout_width="349dp"
         android:layout_height="642dp"
         android:background="@color/black"
@@ -82,5 +83,16 @@
 
 
     </LinearLayout>
+
+    <Button
+        style="@style/backButton"
+        android:text="@string/back"
+        android:onClick="finish"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout"
+        app:layout_constraintVertical_bias="0.5" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

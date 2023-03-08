@@ -23,4 +23,8 @@ public class AssistantsSelectActivity extends AppCompatActivity {
         Intent intent = new Intent(this, AssistantDeleteActivity.class);
         startActivity(intent);
     }
+
+    public void finish(View view) {
+        finish();
+    }
 }

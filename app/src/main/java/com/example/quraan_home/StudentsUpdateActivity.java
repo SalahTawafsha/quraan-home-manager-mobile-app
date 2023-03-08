@@ -102,4 +102,8 @@ public class StudentsUpdateActivity extends AppCompatActivity {
         delete.setEnabled(false);
         loadStudents();
     }
+
+    public void finish(View view) {
+        finish();
+    }
 }

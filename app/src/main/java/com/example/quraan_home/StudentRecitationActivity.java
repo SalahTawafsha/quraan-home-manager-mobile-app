@@ -96,4 +96,8 @@ public class StudentRecitationActivity extends AppCompatActivity {
 
         Toast.makeText(this, "تم الحفظ", Toast.LENGTH_SHORT).show();
     }
+
+    public void finish(View view) {
+        finish();
+    }
 }

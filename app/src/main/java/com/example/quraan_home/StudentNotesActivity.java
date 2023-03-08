@@ -44,4 +44,8 @@ public class StudentNotesActivity extends AppCompatActivity {
                 .child("notes").setValue(notes.getText().toString());
         Toast.makeText(this, "تم الحفظ !", Toast.LENGTH_SHORT).show();
     }
+
+    public void finish(View view) {
+        finish();
+    }
 }

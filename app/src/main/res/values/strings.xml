@@ -32,4 +32,6 @@
     <string name="roles_update">تعديل الاحكام</string>
     <string name="role_name">إسم الحكم</string>
     <string name="rules_add">إضافة حكم</string>
+    <string name="back">رجوع</string>
+    <string name="sign_out">تسجيل الخروج</string>
 </resources>

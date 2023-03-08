@@ -14,4 +14,9 @@
         android:layout_height="642dp"
         android:background="@color/white" />
 
+    <Button
+        style="@style/backButton"
+        android:text="@string/back"
+        android:onClick="finish" />
+
 </LinearLayout>

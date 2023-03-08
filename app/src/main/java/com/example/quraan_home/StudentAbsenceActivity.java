@@ -86,4 +86,8 @@ public class StudentAbsenceActivity extends AppCompatActivity {
         list.setAdapter(adapter);
         delete.setEnabled(false);
     }
+
+    public void finish(View view) {
+        finish();
+    }
 }

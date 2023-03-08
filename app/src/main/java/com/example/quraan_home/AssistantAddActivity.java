@@ -69,4 +69,8 @@ public class AssistantAddActivity extends AppCompatActivity {
         add.setEnabled(false);
         Toast.makeText(this, "تمت الإضافة !", Toast.LENGTH_SHORT).show();
     }
+
+    public void finish(View view) {
+        finish();
+    }
 }

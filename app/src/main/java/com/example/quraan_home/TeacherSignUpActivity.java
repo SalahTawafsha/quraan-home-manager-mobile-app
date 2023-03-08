@@ -71,4 +71,8 @@ public class TeacherSignUpActivity extends AppCompatActivity {
         } else
             Toast.makeText(this, "كلمة السر غير متطابة", Toast.LENGTH_SHORT).show();
     }
+
+    public void finish(View view) {
+        finish();
+    }
 }

@@ -112,4 +112,8 @@ public class TeacherRolesActivity extends AppCompatActivity {
         delete.setEnabled(false);
         loadRules();
     }
+
+    public void finish(View view) {
+        finish();
+    }
 }

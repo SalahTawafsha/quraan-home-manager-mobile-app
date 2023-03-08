@@ -73,4 +73,8 @@ public class TeacherAbsenceActivity extends AppCompatActivity {
             }
         finish();
     }
+
+    public void finish(View view) {
+        finish();
+    }
 }

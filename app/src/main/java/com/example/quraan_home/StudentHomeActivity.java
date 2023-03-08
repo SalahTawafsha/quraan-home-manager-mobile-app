@@ -46,4 +46,8 @@ public class StudentHomeActivity extends AppCompatActivity {
         Intent intent = new Intent(this, StudentMemorizationActivity.class);
         startActivity(intent);
     }
+
+    public void finish(View view) {
+        finish();
+    }
 }
