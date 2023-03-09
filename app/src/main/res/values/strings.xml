@@ -34,4 +34,5 @@
     <string name="rules_add">إضافة حكم</string>
     <string name="back">رجوع</string>
     <string name="sign_out">تسجيل الخروج</string>
+    <string name="save_report">حفظ تقرير</string>
 </resources>

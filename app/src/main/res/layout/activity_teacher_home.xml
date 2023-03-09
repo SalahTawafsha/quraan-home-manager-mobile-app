@@ -25,11 +25,12 @@
 
         <TextView
             style="@style/label"
+            android:textSize="16sp"
             android:text="@string/teacherHomePage" />
 
         <ImageView
             android:layout_width="wrap_content"
-            android:layout_height="171dp"
+            android:layout_height="143dp"
             android:src="@drawable/login_icon"
             tools:ignore="ContentDescription" />
 
@@ -58,6 +59,11 @@
             style="@style/myButton"
             android:onClick="updateRules"
             android:text="@string/roles_update" />
+
+        <Button
+            style="@style/myButton"
+            android:onClick="saveReport"
+            android:text="@string/save_report" />
 
     </LinearLayout>
 

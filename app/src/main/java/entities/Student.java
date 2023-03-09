@@ -1,5 +1,9 @@
 package entities;
 
+import android.annotation.SuppressLint;
+
+import androidx.annotation.NonNull;
+
 import java.util.ArrayList;
 import java.util.Date;
 
@@ -65,5 +69,13 @@ public class Student extends Person {
 
     public ArrayList<String> getRecitation() {
         return recitation;
+    }
+
+    @SuppressLint("DefaultLocale")
+    @NonNull
+    @Override
+    public String toString() {
+        return String.format("%80s%40d%40d%40d%s", getName(), pagesMemorized.size(), recitation.size(), datesOfAbsence.size(), notes);
+
     }
 }
