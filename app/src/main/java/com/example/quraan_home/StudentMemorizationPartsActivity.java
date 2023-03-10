@@ -19,6 +19,7 @@ import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.ArrayList;
 
+import entities.Memorization;
 import entities.Student;
 
 public class StudentMemorizationPartsActivity extends AppCompatActivity {
@@ -144,8 +145,6 @@ public class StudentMemorizationPartsActivity extends AppCompatActivity {
                         checkBox.setId(View.AUTOFILL_TYPE_NONE);
                         checkBox.setLayoutDirection(View.LAYOUT_DIRECTION_RTL);
                         checkBox.setTextColor(Color.WHITE);
-                        if (student.getPagesMemorized().contains(line))
-                            checkBox.setChecked(true);
                         checkBox.setButtonTintList(ColorStateList.valueOf(Color.WHITE));
                         checkBox.setTextSize(20);
                         checkBox.setPadding(0, 25, 0, 25);
@@ -156,11 +155,17 @@ public class StudentMemorizationPartsActivity extends AppCompatActivity {
 
 
                         EditText rate = new EditText(this);
+                        rate.setTextColor(Color.WHITE);
                         rate.setInputType(InputType.TYPE_CLASS_NUMBER);
                         rate.setLayoutParams(new LinearLayout.LayoutParams(
                                 100
                                 , LinearLayout.LayoutParams.WRAP_CONTENT));
 
+                        int i = student.getPagesMemorized().indexOf(new Memorization(line, 0));
+                        if (i >= 0) {
+                            checkBox.setChecked(true);
+                            rate.setText(String.valueOf(student.getPagesMemorized().get(i).getPercentOfMemorization()));
+                        }
 
                         LinearLayout linearLayout = new LinearLayout(this);
                         linearLayout.addView(rate);
@@ -174,11 +179,18 @@ public class StudentMemorizationPartsActivity extends AppCompatActivity {
     }
 
     public void save(View view) {
-        ArrayList<String> pagesMemorized = new ArrayList<>();
-        for (int i = 0; i < surah.getChildCount(); i++)
-            if (((CheckBox) surah.getChildAt(i)).isChecked()) {
-                pagesMemorized.add(((CheckBox) surah.getChildAt(i)).getText().toString());
+        ArrayList<Memorization> pagesMemorized = new ArrayList<>();
+        for (int i = 0; i < surah.getChildCount(); i++) {
+            LinearLayout l = (LinearLayout) surah.getChildAt(i);
+            if (((CheckBox) l.getChildAt(1)).isChecked()) {
+                EditText rate = (EditText) l.getChildAt(0);
+                if (rate.getText().toString().isEmpty())
+                    pagesMemorized.add(new Memorization(((CheckBox) l.getChildAt(1)).getText().toString(), 100));
+                else
+                    pagesMemorized.add(new Memorization(((CheckBox) l.getChildAt(1)).getText().toString(), Integer.parseInt(rate.getText().toString())));
             }
+        }
+
         database.child("student").child(sharedPref.getString("currStudent", ""))
                 .child("pagesMemorized").setValue(pagesMemorized);
 

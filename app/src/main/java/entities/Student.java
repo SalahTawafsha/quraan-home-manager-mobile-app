@@ -10,7 +10,7 @@ import java.util.Date;
 public class Student extends Person {
     private String teacherName;
     private final ArrayList<Date> datesOfAbsence;
-    private final ArrayList<String> pagesMemorized;
+    private final ArrayList<Memorization> pagesMemorized;
     private final ArrayList<String> recitation;
     private Date dateOfRegister;
     private int yearOfBirth;
@@ -29,7 +29,7 @@ public class Student extends Person {
 
     }
 
-    public Student(String name, String teacherName, ArrayList<Date> datesOfAbsence, ArrayList<String> pagesMemorized, String notes) {
+    public Student(String name, String teacherName, ArrayList<Date> datesOfAbsence, ArrayList<Memorization> pagesMemorized, String notes) {
         super(name);
         this.teacherName = teacherName;
         this.datesOfAbsence = datesOfAbsence;
@@ -81,7 +81,7 @@ public class Student extends Person {
         return datesOfAbsence;
     }
 
-    public ArrayList<String> getPagesMemorized() {
+    public ArrayList<Memorization> getPagesMemorized() {
         return pagesMemorized;
     }
 
