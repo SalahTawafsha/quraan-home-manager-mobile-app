@@ -7,8 +7,10 @@ import android.content.SharedPreferences;
 import android.content.res.ColorStateList;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.text.InputType;
 import android.view.View;
 import android.widget.CheckBox;
+import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
@@ -35,7 +37,7 @@ public class StudentMemorizationPartsActivity extends AppCompatActivity {
         sharedPref = getSharedPreferences(
                 getString(R.string.login)
                 , Context.MODE_PRIVATE);
-        
+
         String[] lines;
 
         int x = getIntent().getIntExtra("part", 1) + 1;
@@ -151,7 +153,21 @@ public class StudentMemorizationPartsActivity extends AppCompatActivity {
                         checkBox.setLayoutParams(new LinearLayout.LayoutParams(
                                 LinearLayout.LayoutParams.WRAP_CONTENT
                                 , LinearLayout.LayoutParams.WRAP_CONTENT));
-                        surah.addView(checkBox);
+
+
+                        EditText rate = new EditText(this);
+                        rate.setInputType(InputType.TYPE_CLASS_NUMBER);
+                        rate.setLayoutParams(new LinearLayout.LayoutParams(
+                                100
+                                , LinearLayout.LayoutParams.WRAP_CONTENT));
+
+
+                        LinearLayout linearLayout = new LinearLayout(this);
+                        linearLayout.addView(rate);
+                        linearLayout.addView(checkBox);
+
+
+                        surah.addView(linearLayout);
                     }
                 });
 

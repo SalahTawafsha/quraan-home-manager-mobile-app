@@ -28,9 +28,8 @@
             android:id="@+id/notes"
             android:layout_width="318dp"
             android:layout_height="276dp"
-            android:textColor="#FFFFFF"
             android:autofillHints=""
-            android:background="#86777777"
+            android:background="@color/white"
             android:inputType="textMultiLine"
             tools:ignore="LabelFor" />
 
