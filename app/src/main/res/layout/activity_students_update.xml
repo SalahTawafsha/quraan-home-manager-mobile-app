@@ -25,22 +25,30 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <Button
-            android:id="@+id/addStudent"
-            style="@style/myButton"
-            android:onClick="add"
-            android:text="@string/add_student" />
+        <EditText
+            android:id="@+id/student_name"
+            style="@style/EditText"
+            android:layout_width="wrap_content"
+            android:layout_height="56dp"
+            android:hint="@string/student_name"
+            android:inputType="textPersonName"
+            tools:ignore="Autofill,LabelFor" />
 
         <Button
-            android:id="@+id/updateStudent"
             style="@style/myButton"
-            android:visibility="gone"
-            android:onClick="update"
-            android:text="@string/update_student_info" />
+            android:onClick="addStudent"
+            android:text="@string/add_student" />
+
+        <ListView
+            android:id="@+id/students"
+            android:layout_width="300dp"
+            android:layout_height="418dp"
+            android:background="@color/white" />
 
         <Button
             android:id="@+id/deleteStudent"
             style="@style/myButton"
+            android:enabled="false"
             android:onClick="delete"
             android:text="@string/delete" />
 

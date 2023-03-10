@@ -50,4 +50,9 @@ public class StudentHomeActivity extends AppCompatActivity {
     public void finish(View view) {
         finish();
     }
+
+    public void update(View view) {
+        Intent intent = new Intent(this, StudentUpdateInfoActivity.class);
+        startActivity(intent);
+    }
 }

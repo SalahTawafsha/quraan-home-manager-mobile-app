@@ -38,4 +38,740 @@
     <string name="phone_number">رقم الهاتف</string>
     <string name="year_of_birth">سنة الميلاد</string>
     <string name="update_student_info">تعديل معلومات</string>
+    <string name="register_date">تاريخ التسجيل</string>
+    <string name="done">اختيار</string>
+    <string-array name="parts">
+        <item>الجزء الأول</item>
+        <item>الجزء الثاني</item>
+        <item>الجزء الثالث</item>
+        <item>الجزء الرابع</item>
+        <item>الجزء الخامس</item>
+        <item>الجزء السادس</item>
+        <item>الجزء السابع</item>
+        <item>الجزء الثامن</item>
+        <item>الجزء التاسع</item>
+        <item>الجزء العاشر</item>
+        <item>الجزء الحادي عشر</item>
+        <item>الجزء الثاني عشر</item>
+        <item>الجزء الثالث عشر</item>
+        <item>الجزء الرابع عشر</item>
+        <item>الجزء الخامس عشر</item>
+        <item>الجزء السادس عشر</item>
+        <item>الجزء السابع عشر</item>
+        <item>الجزء الثامن عشر</item>
+        <item>الجزء التاسع عشر</item>
+        <item>الجزء العشرون</item>
+        <item>الجزء الحادي والعشرون</item>
+        <item>الجزء الثاني والعشرون</item>
+        <item>الجزء الثالث والعشرون</item>
+        <item>الجزء الرابع والعشرون</item>
+        <item>الجزء الخامس والعشرون</item>
+        <item>الجزء السادس والعشرون</item>
+        <item>الجزء السابع والعشرون</item>
+        <item>الجزء الثامن والعشرون</item>
+        <item>الجزء التاسع والعشرون</item>
+        <item>الجزء الثلاثون</item>
+
+
+    </string-array>
+
+    <string-array name="part1">
+        <item>2: سورة البقرة</item>
+        <item>3: سورة البقرة</item>
+        <item>4: سورة البقرة</item>
+        <item>5: سورة البقرة</item>
+        <item>6: سورة البقرة</item>
+        <item>7: سورة البقرة</item>
+        <item>8: سورة البقرة</item>
+        <item>9: سورة البقرة</item>
+        <item>10: سورة البقرة</item>
+        <item>11: سورة البقرة</item>
+        <item>12: سورة البقرة</item>
+        <item>13: سورة البقرة</item>
+        <item>14: سورة البقرة</item>
+        <item>15: سورة البقرة</item>
+        <item>16: سورة البقرة</item>
+        <item>17: سورة البقرة</item>
+        <item>18: سورة البقرة</item>
+        <item>19: سورة البقرة</item>
+        <item>20: سورة البقرة</item>
+        <item>21: سورة البقرة</item>
+
+    </string-array>
+
+    <string-array name="part2">
+        <item>22: سورة البقرة</item>
+        <item>23: سورة البقرة</item>
+        <item>24: سورة البقرة</item>
+        <item>25: سورة البقرة</item>
+        <item>26: سورة البقرة</item>
+        <item>27: سورة البقرة</item>
+        <item>28: سورة البقرة</item>
+        <item>29: سورة البقرة</item>
+        <item>30: سورة البقرة</item>
+        <item>31: سورة البقرة</item>
+        <item>32: سورة البقرة</item>
+        <item>33: سورة البقرة</item>
+        <item>34: سورة البقرة</item>
+        <item>35: سورة البقرة</item>
+        <item>36: سورة البقرة</item>
+        <item>37: سورة البقرة</item>
+        <item>38: سورة البقرة</item>
+        <item>39: سورة البقرة</item>
+        <item>40: سورة البقرة</item>
+        <item>41: سورة البقرة</item>
+    </string-array>
+
+    <string-array name="part3">
+        <item>42: سورة البقرة</item>
+        <item>43: سورة البقرة</item>
+        <item>44: سورة البقرة</item>
+        <item>45: سورة البقرة</item>
+        <item>46: سورة البقرة</item>
+        <item>47: سورة البقرة</item>
+        <item>48: سورة البقرة</item>
+        <item>49: سورة البقرة</item>
+        <item>50: سورة آل عمران</item>
+        <item>51: سورة آل عمران</item>
+        <item>52: سورة آل عمران</item>
+        <item>53: سورة آل عمران</item>
+        <item>54: سورة آل عمران</item>
+        <item>55: سورة آل عمران</item>
+        <item>56: سورة آل عمران</item>
+        <item>57: سورة آل عمران</item>
+        <item>58: سورة آل عمران</item>
+        <item>59: سورة آل عمران</item>
+        <item>60: سورة آل عمران</item>
+        <item>61: سورة آل عمران</item>
+    </string-array>
+
+    <string-array name="part4">
+        <item>62: سورة آل عمران</item>
+        <item>63: سورة آل عمران</item>
+        <item>64: سورة آل عمران</item>
+        <item>65: سورة آل عمران</item>
+        <item>66: سورة آل عمران</item>
+        <item>67: سورة آل عمران</item>
+        <item>68: سورة آل عمران</item>
+        <item>69: سورة آل عمران</item>
+        <item>70: سورة آل عمران</item>
+        <item>71: سورة آل عمران</item>
+        <item>72: سورة آل عمران</item>
+        <item>73: سورة آل عمران</item>
+        <item>74: سورة آل عمران</item>
+        <item>75: سورة آل عمران</item>
+        <item>76: سورة آل عمران</item>
+        <item>77: سورة النساء</item>
+        <item>78: سورة النساء</item>
+        <item>79: سورة النساء</item>
+        <item>80: سورة النساء</item>
+        <item>81: سورة النساء</item>
+    </string-array>
+
+    <string-array name="part5">
+        <item>82: سورة النساء</item>
+        <item>83: سورة النساء</item>
+        <item>84: سورة النساء</item>
+        <item>85: سورة النساء</item>
+        <item>86: سورة النساء</item>
+        <item>87: سورة النساء</item>
+        <item>88: سورة النساء</item>
+        <item>89: سورة النساء</item>
+        <item>90: سورة النساء</item>
+        <item>91: سورة النساء</item>
+        <item>92: سورة النساء</item>
+        <item>93: سورة النساء</item>
+        <item>94: سورة النساء</item>
+        <item>95: سورة النساء</item>
+        <item>96: سورة النساء</item>
+        <item>97: سورة النساء</item>
+        <item>98: سورة النساء</item>
+        <item>99: سورة النساء</item>
+        <item>100: سورة النساء</item>
+        <item>101: سورة النساء</item>
+    </string-array>
+
+    <string-array name="part6">
+        <item>102: سورة النساء</item>
+        <item>103: سورة النساء</item>
+        <item>104: سورة النساء</item>
+        <item>105: سورة النساء</item>
+        <item>106: سورة المائدة</item>
+        <item>107: سورة المائدة</item>
+        <item>108: سورة المائدة</item>
+        <item>109: سورة المائدة</item>
+        <item>110: سورة المائدة</item>
+        <item>111: سورة المائدة</item>
+        <item>112: سورة المائدة</item>
+        <item>113: سورة المائدة</item>
+        <item>114: سورة المائدة</item>
+        <item>115: سورة المائدة</item>
+        <item>116: سورة المائدة</item>
+        <item>117: سورة المائدة</item>
+        <item>118: سورة المائدة</item>
+        <item>119: سورة المائدة</item>
+        <item>120: سورة المائدة</item>
+        <item>121: سورة المائدة</item>
+    </string-array>
+
+    <string-array name="part7">
+        <item>122: سورة المائدة</item>
+        <item>123: سورة المائدة</item>
+        <item>124: سورة المائدة</item>
+        <item>125: سورة المائدة</item>
+        <item>126: سورة المائدة</item>
+        <item>127: سورة المائدة</item>
+        <item>128: سورة الأنعام</item>
+        <item>129: سورة الأنعام</item>
+        <item>130: سورة الأنعام</item>
+        <item>131: سورة الأنعام</item>
+        <item>132: سورة الأنعام</item>
+        <item>133: سورة الأنعام</item>
+        <item>134: سورة الأنعام</item>
+        <item>135: سورة الأنعام</item>
+        <item>136: سورة الأنعام</item>
+        <item>137: سورة الأنعام</item>
+        <item>138: سورة الأنعام</item>
+        <item>139: سورة الأنعام</item>
+        <item>140: سورة الأنعام</item>
+        <item>141: سورة الأنعام</item>
+    </string-array>
+
+    <string-array name="part8">
+        <item>142: سورة الأنعام</item>
+        <item>143: سورة الأنعام</item>
+        <item>144: سورة الأنعام</item>
+        <item>145: سورة الأنعام</item>
+        <item>146: سورة الأنعام</item>
+        <item>147: سورة الأنعام</item>
+        <item>148: سورة الأنعام</item>
+        <item>149: سورة الأنعام</item>
+        <item>150: سورة الأنعام</item>
+        <item>151: سورة الأعراف</item>
+        <item>152: سورة الأعراف</item>
+        <item>153: سورة الأعراف</item>
+        <item>154: سورة الأعراف</item>
+        <item>155: سورة الأعراف</item>
+        <item>156: سورة الأعراف</item>
+        <item>157: سورة الأعراف</item>
+        <item>158: سورة الأعراف</item>
+        <item>159: سورة الأعراف</item>
+        <item>160: سورة الأعراف</item>
+        <item>161: سورة الأعراف</item>
+    </string-array>
+
+    <string-array name="part9">
+        <item>162: سورة الأعراف</item>
+        <item>163: سورة الأعراف</item>
+        <item>164: سورة الأعراف</item>
+        <item>165: سورة الأعراف</item>
+        <item>166: سورة الأعراف</item>
+        <item>167: سورة الأعراف</item>
+        <item>168: سورة الأعراف</item>
+        <item>169: سورة الأعراف</item>
+        <item>170: سورة الأعراف</item>
+        <item>171: سورة الأعراف</item>
+        <item>172: سورة الأعراف</item>
+        <item>173: سورة الأعراف</item>
+        <item>174: سورة الأعراف</item>
+        <item>175: سورة الأعراف</item>
+        <item>176: سورة الأعراف</item>
+        <item>177: سورة الأنفال</item>
+        <item>178: سورة الأنفال</item>
+        <item>179: سورة الأنفال</item>
+        <item>180: سورة الأنفال</item>
+        <item>181: سورة الأنفال</item>
+    </string-array>
+
+    <string-array name="part10">
+        <item>182: سورة الأنفال</item>
+        <item>183: سورة الأنفال</item>
+        <item>184: سورة الأنفال</item>
+        <item>185: سورة الأنفال</item>
+        <item>186: سورة الأنفال</item>
+        <item>187: سورة التوبة</item>
+        <item>188: سورة التوبة</item>
+        <item>189: سورة التوبة</item>
+        <item>190: سورة التوبة</item>
+        <item>191: سورة التوبة</item>
+        <item>192: سورة التوبة</item>
+        <item>193: سورة التوبة</item>
+        <item>194: سورة التوبة</item>
+        <item>195: سورة التوبة</item>
+        <item>196: سورة التوبة</item>
+        <item>197: سورة التوبة</item>
+        <item>198: سورة التوبة</item>
+        <item>199: سورة التوبة</item>
+        <item>200: سورة التوبة</item>
+        <item>201: سورة التوبة</item>
+    </string-array>
+
+    <string-array name="part11">
+        <item>201: سورة التوبة</item>
+        <item>202: سورة التوبة</item>
+        <item>203: سورة التوبة</item>
+        <item>204: سورة التوبة</item>
+        <item>205: سورة التوبة</item>
+        <item>206: سورة التوبة</item>
+        <item>207: سورة التوبة</item>
+        <item>208: سورة يونس</item>
+        <item>209: سورة يونس</item>
+        <item>210: سورة يونس</item>
+        <item>211: سورة يونس</item>
+        <item>212: سورة يونس</item>
+        <item>213: سورة يونس</item>
+        <item>214: سورة يونس</item>
+        <item>215: سورة يونس</item>
+        <item>216: سورة يونس</item>
+        <item>217: سورة يونس</item>
+        <item>218: سورة يونس</item>
+        <item>219: سورة يونس</item>
+        <item>220: سورة يونس</item>
+        <item>221: سورة هود</item>
+    </string-array>
+    <string-array name="part12">
+
+        <item>222: سورة هود</item>
+        <item>223: سورة هود</item>
+        <item>224: سورة هود</item>
+        <item>225: سورة هود</item>
+        <item>226: سورة هود</item>
+        <item>227: سورة هود</item>
+        <item>228: سورة هود</item>
+        <item>229: سورة هود</item>
+        <item>230: سورة هود</item>
+        <item>231: سورة هود</item>
+        <item>232: سورة هود</item>
+        <item>233: سورة هود</item>
+        <item>234: سورة هود</item>
+        <item>235: سورة يوسف</item>
+        <item>236: سورة يوسف</item>
+        <item>237: سورة يوسف</item>
+        <item>238: سورة يوسف</item>
+        <item>239: سورة يوسف</item>
+        <item>240: سورة يوسف</item>
+        <item>241: سورة يوسف</item>
+
+    </string-array>
+
+    <string-array name="part13">
+        <item>242: سورة يوسف</item>
+        <item>243: سورة يوسف</item>
+        <item>244: سورة يوسف</item>
+        <item>245: سورة يوسف</item>
+        <item>246: سورة يوسف</item>
+        <item>247: سورة يوسف</item>
+        <item>248: سورة يوسف</item>
+        <item>249: سورة الرعد</item>
+        <item>250: سورة الرعد</item>
+        <item>251: سورة الرعد</item>
+        <item>252: سورة الرعد</item>
+        <item>253: سورة الرعد</item>
+        <item>254: سورة الرعد</item>
+        <item>255: سورة ابراهيم</item>
+        <item>256: سورة ابراهيم</item>
+        <item>257: سورة ابراهيم</item>
+        <item>258: سورة ابراهيم</item>
+        <item>259: سورة ابراهيم</item>
+        <item>260: سورة ابراهيم</item>
+        <item>261: سورة ابراهيم</item>
+    </string-array>
+
+    <string-array name="part14">
+        <item>262: سورة الحجر</item>
+        <item>263: سورة الحجر</item>
+        <item>264: سورة الحجر</item>
+        <item>265: سورة الحجر</item>
+        <item>266: سورة الحجر</item>
+        <item>267: سورة النحل</item>
+        <item>268: سورة النحل</item>
+        <item>269: سورة النحل</item>
+        <item>270: سورة النحل</item>
+        <item>271: سورة النحل</item>
+        <item>272: سورة النحل</item>
+        <item>273: سورة النحل</item>
+        <item>274: سورة النحل</item>
+        <item>275: سورة النحل</item>
+        <item>276: سورة النحل</item>
+        <item>277: سورة النحل</item>
+        <item>278: سورة النحل</item>
+        <item>279: سورة النحل</item>
+        <item>280: سورة النحل</item>
+        <item>281: سورة النحل</item>
+    </string-array>
+
+    <string-array name="part15">
+        <item>282: سورة الإسراء</item>
+        <item>283: سورة الإسراء</item>
+        <item>284: سورة الإسراء</item>
+        <item>285: سورة الإسراء</item>
+        <item>286: سورة الإسراء</item>
+        <item>287: سورة الإسراء</item>
+        <item>288: سورة الإسراء</item>
+        <item>289: سورة الإسراء</item>
+        <item>290: سورة الإسراء</item>
+        <item>291: سورة الإسراء</item>
+        <item>292: سورة الإسراء</item>
+        <item>293: سورة الكهف</item>
+        <item>294: سورة الكهف</item>
+        <item>295: سورة الكهف</item>
+        <item>296: سورة الكهف</item>
+        <item>297: سورة الكهف</item>
+        <item>298: سورة الكهف</item>
+        <item>299: سورة الكهف</item>
+        <item>300: سورة الكهف</item>
+        <item>301: سورة الكهف</item>
+    </string-array>
+
+    <string-array name="part16">
+        <item>302: سورة الكهف</item>
+        <item>303: سورة الكهف</item>
+        <item>304: سورة الكهف</item>
+        <item>305: سورة مريم</item>
+        <item>306: سورة مريم</item>
+        <item>307: سورة مريم</item>
+        <item>308: سورة مريم</item>
+        <item>309: سورة مريم</item>
+        <item>310: سورة مريم</item>
+        <item>311: سورة مريم</item>
+        <item>312: سورة طه</item>
+        <item>313: سورة طه</item>
+        <item>314: سورة طه</item>
+        <item>315: سورة طه</item>
+        <item>316: سورة طه</item>
+        <item>317: سورة طه</item>
+        <item>318: سورة طه</item>
+        <item>319: سورة طه</item>
+        <item>320: سورة طه</item>
+        <item>321: سورة طه</item>
+    </string-array>
+    <string-array name="part17">
+        <item>322: سورة الأنبياء</item>
+        <item>323: سورة الأنبياء</item>
+        <item>324: سورة الأنبياء</item>
+        <item>325: سورة الأنبياء</item>
+        <item>326: سورة الأنبياء</item>
+        <item>327: سورة الأنبياء</item>
+        <item>328: سورة الأنبياء</item>
+        <item>329: سورة الأنبياء</item>
+        <item>330: سورة الأنبياء</item>
+        <item>331: سورة الأنبياء</item>
+        <item>332: سورة الحج</item>
+        <item>333: سورة الحج</item>
+        <item>334: سورة الحج</item>
+        <item>335: سورة الحج</item>
+        <item>336: سورة الحج</item>
+        <item>337: سورة الحج</item>
+        <item>338: سورة الحج</item>
+        <item>339: سورة الحج</item>
+        <item>340: سورة الحج</item>
+        <item>341: سورة الحج</item>
+    </string-array>
+    <string-array name="part18">
+
+        <item>342: سورة المؤمنون</item>
+        <item>343: سورة المؤمنون</item>
+        <item>344: سورة المؤمنون</item>
+        <item>345: سورة المؤمنون</item>
+        <item>346: سورة المؤمنون</item>
+        <item>347: سورة المؤمنون</item>
+        <item>348: سورة المؤمنون</item>
+        <item>349: سورة المؤمنون</item>
+        <item>350: سورة النور</item>
+        <item>351: سورة النور</item>
+        <item>352: سورة النور</item>
+        <item>353: سورة النور</item>
+        <item>354: سورة النور</item>
+        <item>355: سورة النور</item>
+        <item>356: سورة النور</item>
+        <item>357: سورة النور</item>
+        <item>358: سورة النور</item>
+        <item>359: سورة الفرقان</item>
+        <item>360: سورة الفرقان</item>
+        <item>361: سورة الفرقان</item>
+
+    </string-array>
+    <string-array name="part19">
+        <item>362: سورة الفرقان</item>
+        <item>363: سورة الفرقان</item>
+        <item>364: سورة الفرقان</item>
+        <item>365: سورة الفرقان</item>
+        <item>366: سورة الفرقان</item>
+        <item>367: سورة الشعراء</item>
+        <item>368: سورة الشعراء</item>
+        <item>369: سورة الشعراء</item>
+        <item>370: سورة الشعراء</item>
+        <item>371: سورة الشعراء</item>
+        <item>372: سورة الشعراء</item>
+        <item>373: سورة الشعراء</item>
+        <item>374: سورة الشعراء</item>
+        <item>375: سورة الشعراء</item>
+        <item>376: سورة الشعراء</item>
+        <item>377: سورة النمل</item>
+        <item>378: سورة النمل</item>
+        <item>379: سورة النمل</item>
+        <item>380: سورة النمل</item>
+        <item>381: سورة النمل</item>
+    </string-array>
+    <string-array name="part20">
+        <item>382: سورة النمل</item>
+        <item>383: سورة النمل</item>
+        <item>384: سورة النمل</item>
+        <item>385: سورة القصص</item>
+        <item>386: سورة القصص</item>
+        <item>387: سورة القصص</item>
+        <item>388: سورة القصص</item>
+        <item>389: سورة القصص</item>
+        <item>390: سورة القصص</item>
+        <item>391: سورة القصص</item>
+        <item>392: سورة القصص</item>
+        <item>393: سورة القصص</item>
+        <item>394: سورة القصص</item>
+        <item>395: سورة القصص</item>
+        <item>396: سورة العنكبوت</item>
+        <item>397: سورة العنكبوت</item>
+        <item>398: سورة العنكبوت</item>
+        <item>399: سورة العنكبوت</item>
+        <item>400: سورة العنكبوت</item>
+        <item>401: سورة العنكبوت</item>
+    </string-array>
+    <string-array name="part21">
+        <item>402: سورة العنكبوت</item>
+        <item>403: سورة العنكبوت</item>
+        <item>404: سورة الروم</item>
+        <item>405: سورة الروم</item>
+        <item>406: سورة الروم</item>
+        <item>407: سورة الروم</item>
+        <item>408: سورة الروم</item>
+        <item>409: سورة الروم</item>
+        <item>410: سورة الروم</item>
+        <item>411: سورة لقمان</item>
+        <item>412: سورة لقمان</item>
+        <item>413: سورة لقمان</item>
+        <item>414: سورة لقمان</item>
+        <item>415: سورة السجدة</item>
+        <item>416: سورة السجدة</item>
+        <item>417: سورة السجدة</item>
+        <item>418: سورة الأحزاب</item>
+        <item>419: سورة الأحزاب</item>
+        <item>420: سورة الأحزاب</item>
+        <item>421: سورة الأحزاب</item>
+    </string-array>
+    <string-array name="part22">
+        <item>422: سورة الأحزاب</item>
+        <item>423: سورة الأحزاب</item>
+        <item>424: سورة الأحزاب</item>
+        <item>425: سورة الأحزاب</item>
+        <item>426: سورة الأحزاب</item>
+        <item>427: سورة الأحزاب</item>
+        <item>428: سورة سبأ</item>
+        <item>429: سورة سبأ</item>
+        <item>430: سورة سبأ</item>
+        <item>431: سورة سبأ</item>
+        <item>432: سورة سبأ</item>
+        <item>433: سورة سبأ</item>
+        <item>434: سورة فاطر</item>
+        <item>435: سورة فاطر</item>
+        <item>436: سورة فاطر</item>
+        <item>437: سورة فاطر</item>
+        <item>438: سورة فاطر</item>
+        <item>439: سورة فاطر</item>
+        <item>440: سورة يس</item>
+        <item>441: سورة يس</item>
+    </string-array>
+    <string-array name="part23">
+        <item>442: سورة يس</item>
+        <item>443: سورة يس</item>
+        <item>444: سورة يس</item>
+        <item>445: سورة يس</item>
+        <item>446: سورة الصافات</item>
+        <item>447: سورة الصافات</item>
+        <item>448: سورة الصافات</item>
+        <item>449: سورة الصافات</item>
+        <item>450: سورة الصافات</item>
+        <item>451: سورة الصافات</item>
+        <item>452: سورة الصافات</item>
+        <item>453: سورة سورة ص</item>
+        <item>454: سورة سورة ص</item>
+        <item>455: سورة سورة ص</item>
+        <item>456: سورة سورة ص</item>
+        <item>457: سورة سورة ص</item>
+        <item>458: سورة الزمر</item>
+        <item>459: سورة الزمر</item>
+        <item>460: سورة الزمر</item>
+        <item>461: سورة الزمر</item>
+    </string-array>
+    <string-array name="part24">
+        <item>462: سورة الزمر</item>
+        <item>463: سورة الزمر</item>
+        <item>464: سورة الزمر</item>
+        <item>465: سورة الزمر</item>
+        <item>466: سورة الزمر</item>
+        <item>467: سورة غافر</item>
+        <item>468: سورة غافر</item>
+        <item>469: سورة غافر</item>
+        <item>470: سورة غافر</item>
+        <item>471: سورة غافر</item>
+        <item>472: سورة غافر</item>
+        <item>473: سورة غافر</item>
+        <item>474: سورة غافر</item>
+        <item>475: سورة غافر</item>
+        <item>476: سورة غافر</item>
+        <item>477: سورة فصلت</item>
+        <item>478: سورة فصلت</item>
+        <item>479: سورة فصلت</item>
+        <item>480: سورة فصلت</item>
+        <item>481: سورة فصلت</item>
+    </string-array>
+    <string-array name="part25">
+        <item>482: سورة فصلت</item>
+        <item>483: سورة الشورى</item>
+        <item>484: سورة الشورى</item>
+        <item>485: سورة الشورى</item>
+        <item>486: سورة الشورى</item>
+        <item>487: سورة الشورى</item>
+        <item>488: سورة الشورى</item>
+        <item>489: سورة الزخرف</item>
+        <item>490: سورة الزخرف</item>
+        <item>491: سورة الزخرف</item>
+        <item>492: سورة الزخرف</item>
+        <item>493: سورة الزخرف</item>
+        <item>494: سورة الزخرف</item>
+        <item>495: سورة الزخرف</item>
+        <item>496: سورة الدخان</item>
+        <item>497: سورة الدخان</item>
+        <item>498: سورة الدخان</item>
+        <item>499: سورة الجاثية</item>
+        <item>500: سورة الجاثية</item>
+        <item>501: سورة الجاثية</item>
+    </string-array>
+    <string-array name="part26">
+        <item>502: سورة الأحقاف</item>
+        <item>503: سورة الأحقاف</item>
+        <item>504: سورة الأحقاف</item>
+        <item>505: سورة الأحقاف</item>
+        <item>506: سورة الأحقاف</item>
+        <item>507: سورة محمد</item>
+        <item>508: سورة محمد</item>
+        <item>509: سورة محمد</item>
+        <item>510: سورة محمد</item>
+        <item>511: سورة الفتح</item>
+        <item>512: سورة الفتح</item>
+        <item>513: سورة الفتح</item>
+        <item>514: سورة الفتح</item>
+        <item>515: سورة الحجرات</item>
+        <item>516: سورة الحجرات</item>
+        <item>517: سورة الحجرات</item>
+        <item>518: سورة سورة ق</item>
+        <item>519: سورة سورة ق</item>
+        <item>520: سورة الذاريات</item>
+        <item>521: سورة الذاريات</item>
+    </string-array>
+    <string-array name="part27">
+        <item>522: سورة الذاريات</item>
+        <item>523: سورة الطور</item>
+        <item>524: سورة الطور</item>
+        <item>525: سورة الطور</item>
+        <item>526: سورة النجم</item>
+        <item>527: سورة النجم</item>
+        <item>528: سورة القمر</item>
+        <item>529: سورة القمر</item>
+        <item>530: سورة القمر</item>
+        <item>531: سورة الرحمن</item>
+        <item>532: سورة الرحمن</item>
+        <item>533: سورة الرحمن</item>
+        <item>534: سورة الواقعة</item>
+        <item>535: سورة الواقعة</item>
+        <item>536: سورة الواقعة</item>
+        <item>537: سورة الحديد</item>
+        <item>538: سورة الحديد</item>
+        <item>539: سورة الحديد</item>
+        <item>540: سورة الحديد</item>
+        <item>541: سورة الحديد</item>
+    </string-array>
+    <string-array name="part28">
+        <item>542: سورة المجادلة</item>
+        <item>543: سورة المجادلة</item>
+        <item>544: سورة المجادلة</item>
+        <item>545: سورة الحشر</item>
+        <item>546: سورة الحشر</item>
+        <item>547: سورة الحشر</item>
+        <item>548: سورة الحشر</item>
+        <item>549: سورة الممتحنة</item>
+        <item>550: سورة الممتحنة</item>
+        <item>551: سورة الصف</item>
+        <item>552: سورة الصف</item>
+        <item>553: سورة الجمعة</item>
+        <item>554: سورة المنافقون</item>
+        <item>555: سورة المنافقون</item>
+        <item>556: سورة التغابن</item>
+        <item>557: سورة التغابن</item>
+        <item>558: سورة الطلاق</item>
+        <item>559: سورة الطلاق</item>
+        <item>560: سورة التحريم</item>
+        <item>561: سورة التحريم</item>
+    </string-array>
+    <string-array name="part29">
+        <item>562: سورة الملك</item>
+        <item>563: سورة الملك</item>
+        <item>564: سورة القلم</item>
+        <item>565: سورة القلم</item>
+        <item>566: سورة الحاقة</item>
+        <item>567: سورة الحاقة</item>
+        <item>568: سورة المعارج</item>
+        <item>569: سورة المعارج</item>
+        <item>570: سورة نوح</item>
+        <item>571: سورة نوح</item>
+        <item>572: سورة الجن</item>
+        <item>573: سورة الجن</item>
+        <item>574: سورة المزمل</item>
+        <item>575: سورة المدثر</item>
+        <item>576: سورة المدثر</item>
+        <item>577: سورة القيامة</item>
+        <item>578: سورة الإنسان</item>
+        <item>579: سورة الإنسان</item>
+        <item>580: سورة المرسلات</item>
+        <item>581: سورة المرسلات</item>
+    </string-array>
+    <string-array name="part30">
+        <item>582: سورة النبأ</item>
+        <item>583: سورة النازعات</item>
+        <item>584: سورة النازعات</item>
+        <item>585: سورة عبس</item>
+        <item>586: سورة التكوير</item>
+        <item>587: سورة الإنفطار</item>
+        <item>587: سورة المطففين</item>
+        <item>588: سورة المطففين</item>
+        <item>589: سورة الانشقاق</item>
+        <item>590: سورة البروج</item>
+        <item>591: سورة الطارق</item>
+        <item>591: سورة الأعلى</item>
+        <item>592: سورة الغاشية</item>
+        <item>593: سورة الفجر</item>
+        <item>594: سورة البلد</item>
+        <item>595: سورة الشمس</item>
+        <item>595: سورة الليل</item>
+        <item>596: سورة الضحى</item>
+        <item>596: سورة الشرح</item>
+        <item>597: سورة التين</item>
+        <item>597: سورة العلق</item>
+        <item>598: سورة القدر</item>
+        <item>598: سورة البينة</item>
+        <item>599: سورة الزلزلة</item>
+        <item>599: سورة العاديات</item>
+        <item>600: سورة القارعة</item>
+        <item>600: سورة التكاثر</item>
+        <item>601: سورة العصر</item>
+        <item>601: سورة الهمزة</item>
+        <item>601: سورة الفيل</item>
+        <item>602: سورة قريش</item>
+        <item>602: سورة الماعون</item>
+        <item>602: سورة الكوثر</item>
+        <item>603: سورة الكافرون</item>
+        <item>603: سورة النصر</item>
+        <item>603: سورة المسد</item>
+        <item>604: سورة الإخلاص</item>
+        <item>604: سورة الفلق</item>
+
+    </string-array>
 </resources>

@@ -52,6 +52,11 @@
             style="@style/myButton"
             android:onClick="absence"
             android:text="@string/absence" />
+
+        <Button
+            style="@style/myButton"
+            android:onClick="update"
+            android:text="@string/update_student_info" />
     </LinearLayout>
 
     <Button

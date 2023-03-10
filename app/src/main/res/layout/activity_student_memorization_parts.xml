@@ -3,11 +3,9 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
     android:background="@drawable/background"
-    android:orientation="vertical"
-    tools:context=".StudentAddActivity">
-
+    android:layout_height="match_parent"
+    tools:context=".StudentMemorizationPartsActivity">
 
     <LinearLayout
         android:id="@+id/constraintLayout"
@@ -25,45 +23,33 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <EditText
-            android:id="@+id/student_name"
-            style="@style/EditText"
+        <ScrollView
+            android:scrollbarThumbVertical="@drawable/scrollbar"
+            android:scrollbarSize="20dp"
             android:layout_width="wrap_content"
-            android:layout_height="56dp"
-            android:hint="@string/student_name"
-            android:inputType="textPersonName"
-            tools:ignore="Autofill,LabelFor" />
+            android:layout_height="500dp">
 
-        <EditText
-            android:id="@+id/yearOfBirth"
-            style="@style/EditText"
-            android:layout_width="wrap_content"
-            android:layout_height="56dp"
-            android:hint="@string/year_of_birth"
-            android:inputType="number"
-            tools:ignore="Autofill,LabelFor" />
-
-
-        <EditText
-            android:id="@+id/phoneNumber"
-            style="@style/EditText"
-            android:layout_width="wrap_content"
-            android:layout_height="56dp"
-            android:hint="@string/phone_number"
-            android:inputType="phone"
-            tools:ignore="Autofill,LabelFor" />
+            <LinearLayout
+                android:layout_marginStart="30dp"
+                android:id="@+id/surah"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layoutDirection="rtl"
+                android:gravity="center_vertical"
+                android:orientation="vertical" />
+        </ScrollView>
 
         <Button
             style="@style/myButton"
-            android:onClick="addStudent"
-            android:text="@string/add_student" />
+            android:onClick="save"
+            android:text="@string/save" />
 
     </LinearLayout>
 
     <Button
         style="@style/backButton"
-        android:onClick="finish"
         android:text="@string/back"
+        android:onClick="finish"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"

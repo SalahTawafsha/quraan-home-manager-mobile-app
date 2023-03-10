@@ -44,6 +44,15 @@ public class Student extends Person {
         recitation = new ArrayList<>();
     }
 
+    public Student(String name, String teacherName) {
+        super(name);
+        this.teacherName = teacherName;
+        dateOfRegister = new Date();
+        datesOfAbsence = new ArrayList<>();
+        pagesMemorized = new ArrayList<>();
+        recitation = new ArrayList<>();
+    }
+
     public String getTeacherName() {
         return teacherName;
     }
