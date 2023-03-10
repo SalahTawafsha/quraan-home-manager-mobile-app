@@ -13,7 +13,7 @@
     <string name="audience">تسجيل الحضور</string>
     <string name="add_student">إضافة طالب</string>
     <string name="student_name">اسم الطالب</string>
-    <string name="delete">حذف</string>
+    <string name="delete">حذف طالب</string>
     <string name="save">حفظ</string>
     <string name="quran_Memorizing">الحفظ</string>
     <string name="recitation">التجويد</string>
@@ -35,4 +35,7 @@
     <string name="back">رجوع</string>
     <string name="sign_out">تسجيل الخروج</string>
     <string name="save_report">حفظ تقرير</string>
+    <string name="phone_number">رقم الهاتف</string>
+    <string name="year_of_birth">سنة الميلاد</string>
+    <string name="update_student_info">تعديل معلومات</string>
 </resources>

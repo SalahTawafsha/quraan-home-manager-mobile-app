@@ -12,12 +12,17 @@ public class Student extends Person {
     private final ArrayList<Date> datesOfAbsence;
     private final ArrayList<String> pagesMemorized;
     private final ArrayList<String> recitation;
-
+    private Date dateOfRegister;
+    private int yearOfBirth;
+    private String phoneNumber;
     private String notes = "";
 
-    public Student(String name, String teacherName) {
+    public Student(String name, String teacherName, Date dateOfRegister, int yearOfBirth, String phoneNumber) {
         super(name);
         this.teacherName = teacherName;
+        this.dateOfRegister = dateOfRegister;
+        this.yearOfBirth = yearOfBirth;
+        this.phoneNumber = phoneNumber;
         datesOfAbsence = new ArrayList<>();
         pagesMemorized = new ArrayList<>();
         recitation = new ArrayList<>();
@@ -41,6 +46,18 @@ public class Student extends Person {
 
     public String getTeacherName() {
         return teacherName;
+    }
+
+    public Date getDateOfRegister() {
+        return dateOfRegister;
+    }
+
+    public int getYearOfBirth() {
+        return yearOfBirth;
+    }
+
+    public String getPhoneNumber() {
+        return phoneNumber;
     }
 
     public void setTeacherName(String teacherName) {
@@ -75,7 +92,7 @@ public class Student extends Person {
     @NonNull
     @Override
     public String toString() {
-        return String.format("%80s%40d%40d%40d%s", getName(), pagesMemorized.size(), recitation.size(), datesOfAbsence.size(), notes);
+        return String.format("%40s%40d%40d%40d%80s", notes, pagesMemorized.size(), recitation.size(), datesOfAbsence.size(), getName());
 
     }
 }
