@@ -101,7 +101,7 @@ public class Student extends Person {
     @NonNull
     @Override
     public String toString() {
-        return String.format("%40s%40d%40d%40d%80s", notes, pagesMemorized.size(), recitation.size(), datesOfAbsence.size(), getName());
+        return String.format("%-30s|%-30d|%-30d|%-30d|%-40s", getName(), datesOfAbsence.size(), recitation.size(), pagesMemorized.size(), notes);
 
     }
 }
