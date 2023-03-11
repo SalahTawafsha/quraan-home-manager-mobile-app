@@ -179,15 +179,19 @@ public class StudentMemorizationPartsActivity extends AppCompatActivity {
     }
 
     public void save(View view) {
-        ArrayList<Memorization> pagesMemorized = new ArrayList<>();
+        ArrayList<Memorization> pagesMemorized = student.getPagesMemorized();
         for (int i = 0; i < surah.getChildCount(); i++) {
             LinearLayout l = (LinearLayout) surah.getChildAt(i);
-            if (((CheckBox) l.getChildAt(1)).isChecked()) {
+            if (((CheckBox) l.getChildAt(1)).isChecked() &&
+                    !pagesMemorized.contains(
+                            new Memorization(((CheckBox) l.getChildAt(1)).getText().toString()
+                                    , 0))) {
                 EditText rate = (EditText) l.getChildAt(0);
                 if (rate.getText().toString().isEmpty())
                     pagesMemorized.add(new Memorization(((CheckBox) l.getChildAt(1)).getText().toString(), 100));
                 else
-                    pagesMemorized.add(new Memorization(((CheckBox) l.getChildAt(1)).getText().toString(), Integer.parseInt(rate.getText().toString())));
+                    pagesMemorized.add(new Memorization(((CheckBox) l.getChildAt(1)).getText().toString(),
+                            Integer.parseInt(rate.getText().toString())));
             }
         }
 

@@ -3,36 +3,56 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:background="@drawable/background"
     android:layout_height="match_parent"
+    android:background="@drawable/background"
     tools:context=".StudentMemorizationActivity">
 
-    <ListView
-        android:id="@+id/parts"
-        android:entries="@array/parts"
+    <!--    <ListView-->
+    <!--        android:id="@+id/parts"-->
+    <!--        android:entries="@array/parts"-->
+    <!--        android:layout_width="349dp"-->
+    <!--        android:layout_height="642dp"-->
+    <!--        android:layout_marginStart="26dp"-->
+    <!--        android:layout_marginTop="50dp"-->
+    <!--        android:layout_marginEnd="26dp"-->
+    <!--        android:layout_marginBottom="75dp"-->
+    <!--        android:background="@color/white"-->
+    <!--        android:gravity="center"-->
+    <!--        android:orientation="vertical"-->
+    <!--        app:layout_constraintBottom_toBottomOf="parent"-->
+    <!--        app:layout_constraintEnd_toEndOf="parent"-->
+    <!--        app:layout_constraintStart_toStartOf="parent"-->
+    <!--        app:layout_constraintTop_toTopOf="parent" />-->
+
+    <ScrollView
+        android:id="@+id/scrollView"
         android:layout_width="349dp"
         android:layout_height="642dp"
-        android:layout_marginStart="26dp"
-        android:layout_marginTop="50dp"
-        android:layout_marginEnd="26dp"
-        android:layout_marginBottom="75dp"
         android:background="@color/white"
-        android:gravity="center"
-        android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:id="@+id/parts"
+            android:layout_width="349dp"
+            android:layout_height="642dp"
+            android:gravity="center"
+            android:orientation="vertical" />
+    </ScrollView>
+
 
     <Button
         style="@style/backButton"
-        android:text="@string/back"
         android:onClick="finish"
+        android:text="@string/back"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/parts"
-        app:layout_constraintVertical_bias="0.5" />
+        app:layout_constraintTop_toBottomOf="@+id/scrollView"
+        app:layout_constraintVertical_bias="0.5"
+        tools:ignore="TextContrastCheck" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
