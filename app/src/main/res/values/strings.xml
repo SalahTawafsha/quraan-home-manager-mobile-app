@@ -38,6 +38,7 @@
     <string name="update_student_info">تعديل معلومات</string>
     <string name="register_date">تاريخ التسجيل</string>
     <string name="done">اختيار</string>
+    <string name="select_all">تحديد الكل</string>
     <string-array name="parts">
         <item>الجزء الأول</item>
         <item>الجزء الثاني</item>

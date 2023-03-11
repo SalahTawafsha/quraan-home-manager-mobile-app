@@ -23,6 +23,17 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
+        <CheckBox
+            android:id="@+id/checkBox"
+            android:textColor="#FFFFFF"
+            android:buttonTint="#FFFFFF"
+            android:textSize="20sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layoutDirection="rtl"
+            android:onClick="selectAll"
+            android:text="@string/select_all" />
+
         <ScrollView
             android:scrollbarThumbVertical="@drawable/scrollbar"
             android:scrollbarSize="20dp"

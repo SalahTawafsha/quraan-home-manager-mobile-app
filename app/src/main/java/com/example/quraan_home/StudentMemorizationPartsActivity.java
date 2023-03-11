@@ -204,4 +204,17 @@ public class StudentMemorizationPartsActivity extends AppCompatActivity {
     public void finish(View view) {
         finish();
     }
+
+    public void selectAll(View view) {
+        if (((CheckBox) view).isChecked())
+            for (int i = 0; i < surah.getChildCount(); i++) {
+                LinearLayout l = (LinearLayout) surah.getChildAt(i);
+                ((CheckBox) l.getChildAt(1)).setChecked(true);
+            }
+        else
+            for (int i = 0; i < surah.getChildCount(); i++) {
+                LinearLayout l = (LinearLayout) surah.getChildAt(i);
+                ((CheckBox) l.getChildAt(1)).setChecked(false);
+            }
+    }
 }
