@@ -52,13 +52,13 @@ public class TeacherSignUpActivity extends AppCompatActivity {
             database.addListenerForSingleValueEvent(new ValueEventListener() {
                 @Override
                 public void onDataChange(@NonNull DataSnapshot snapshot) {
-                    if (snapshot.child("teachers").hasChild(name.getText().toString()) || snapshot.child("assistants").hasChild(name.getText().toString()))
+                    if (snapshot.child("teachers").hasChild(name.getText().toString().trim()) || snapshot.child("assistants").hasChild(name.getText().toString().trim()))
                         Toast.makeText(TeacherSignUpActivity.this, "اسم المعلم تم تسجيله من قبل", Toast.LENGTH_SHORT).show();
                     else if (teacher.isChecked()) {
-                        database.child("teachers").child(name.getText().toString()).setValue(new Teacher(name.getText().toString().trim(), firstPass.getText().toString()));
+                        database.child("teachers").child(name.getText().toString().trim()).setValue(new Teacher(name.getText().toString().trim(), firstPass.getText().toString()));
                         Toast.makeText(TeacherSignUpActivity.this, "تمت الاضافة", Toast.LENGTH_SHORT).show();
                     } else {
-                        database.child("assistants").child(name.getText().toString()).setValue(new Assistance(name.getText().toString().trim(), firstPass.getText().toString()));
+                        database.child("assistants").child(name.getText().toString().trim()).setValue(new Assistance(name.getText().toString().trim(), firstPass.getText().toString()));
                         Toast.makeText(TeacherSignUpActivity.this, "تمت الاضافة", Toast.LENGTH_SHORT).show();
                     }
                 }
