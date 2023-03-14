@@ -1,5 +1,6 @@
 <resources>
-    <string name="app_name">المنهج</string>
+    <string name="app_name">منهج</string>
+    <string name="app_version">2.02</string>
     <string name="teacherName">اسم المستخدم</string>
     <string name="password">كلمة السر</string>
     <string name="welcome">تسجيل الدخول</string>
@@ -39,6 +40,7 @@
     <string name="register_date">تاريخ التسجيل</string>
     <string name="done">اختيار</string>
     <string name="select_all">تحديد الكل</string>
+    <string name="delete_role">حذف حكم</string>
     <string-array name="parts">
         <item>الجزء الأول</item>
         <item>الجزء الثاني</item>
@@ -770,6 +772,7 @@
         <item>603: سورة المسد</item>
         <item>604: سورة الإخلاص</item>
         <item>604: سورة الفلق</item>
+        <item>604: سورة الناس</item>
 
     </string-array>
 </resources>

@@ -51,7 +51,7 @@
             style="@style/myButton"
             android:enabled="false"
             android:onClick="delete"
-            android:text="@string/delete" />
+            android:text="@string/delete_role" />
 
     </LinearLayout>
 

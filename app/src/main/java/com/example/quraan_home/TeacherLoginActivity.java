@@ -4,8 +4,9 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.pm.PackageInfo;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -35,11 +36,24 @@ public class TeacherLoginActivity extends Activity {
 
         editor = sharedPref.edit();
 
+        clearData();
 
         if (!sharedPref.getString("logInID", "").equals("")) {
             Intent intent = new Intent(this, TeacherHomeActivity.class);
             startActivity(intent);
         }
+    }
+
+    public void clearData() {
+        SharedPreferences mSharedPreferences = getSharedPreferences("app_version", Context.MODE_PRIVATE);
+        int last_version = mSharedPreferences.getInt("last_version", -1);
+        if (last_version == -1) {
+            editor.clear();
+            SharedPreferences.Editor editor = mSharedPreferences.edit();
+            editor.putInt("last_version", 0);
+            editor.apply();
+        }
+
     }
 
     public void signUp(View view) {
@@ -53,7 +67,6 @@ public class TeacherLoginActivity extends Activity {
             Toast.makeText(this, "لا يمكن ان يكون اسم المعلم فارغ", Toast.LENGTH_SHORT).show();
             return;
         }
-        Log.e("test", "'" + name.getText().toString().trim() + "'");
 
         database.child("teachers").child(name.getText().toString().trim()).get().addOnCompleteListener(task -> {
             Teacher t = task.getResult().getValue(Teacher.class);
