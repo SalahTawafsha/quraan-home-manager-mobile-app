@@ -155,6 +155,7 @@ public class StudentMemorizationPartsActivity extends AppCompatActivity {
 
 
                         EditText rate = new EditText(this);
+                        rate.setBackgroundTintList(ColorStateList.valueOf(Color.WHITE));
                         rate.setTextColor(Color.WHITE);
                         rate.setInputType(InputType.TYPE_CLASS_NUMBER);
                         rate.setLayoutParams(new LinearLayout.LayoutParams(
@@ -189,9 +190,20 @@ public class StudentMemorizationPartsActivity extends AppCompatActivity {
                 EditText rate = (EditText) l.getChildAt(0);
                 if (rate.getText().toString().isEmpty())
                     pagesMemorized.add(new Memorization(((CheckBox) l.getChildAt(1)).getText().toString(), 100));
-                else
+                else {
+                    int rateNum = Math.min(100, Integer.parseInt(rate.getText().toString()));
                     pagesMemorized.add(new Memorization(((CheckBox) l.getChildAt(1)).getText().toString(),
-                            Integer.parseInt(rate.getText().toString())));
+                            rateNum));
+                }
+
+            } else if (((CheckBox) l.getChildAt(1)).isChecked()) {
+                pagesMemorized.remove(new Memorization(((CheckBox) l.getChildAt(1)).getText().toString(),
+                        0));
+                EditText rate = (EditText) l.getChildAt(0);
+
+                int rateNum = Math.min(100, Integer.parseInt(rate.getText().toString()));
+                pagesMemorized.add(new Memorization(((CheckBox) l.getChildAt(1)).getText().toString(),
+                        rateNum));
             } else if (!((CheckBox) l.getChildAt(1)).isChecked()) {
                 pagesMemorized.remove(new Memorization(((CheckBox) l.getChildAt(1)).getText().toString()
                         , 0));

@@ -40,7 +40,7 @@
             android:layout_width="wrap_content"
             android:layout_height="56dp"
             android:hint="@string/year_of_birth"
-            android:inputType="textPersonName"
+            android:inputType="number"
             tools:ignore="Autofill,LabelFor" />
 
 
