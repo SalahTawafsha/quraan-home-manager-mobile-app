@@ -57,6 +57,11 @@
             style="@style/myButton"
             android:onClick="update"
             android:text="@string/update_student_info" />
+
+        <Button
+            style="@style/myButton"
+            android:onClick="showInfo"
+            android:text="@string/show_info" />
     </LinearLayout>
 
     <Button

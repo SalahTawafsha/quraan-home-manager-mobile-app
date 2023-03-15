@@ -90,7 +90,8 @@ public class StudentRecitationActivity extends AppCompatActivity {
         for (int i = 0; i < surah.getChildCount(); i++)
             if (((CheckBox) surah.getChildAt(i)).isChecked()) {
                 recitation.add(((CheckBox) surah.getChildAt(i)).getText().toString());
-            }
+            } else
+                recitation.remove(((CheckBox) surah.getChildAt(i)).getText().toString());
         database.child("student").child(sharedPref.getString("currStudent", ""))
                 .child("recitation").setValue(recitation);
 

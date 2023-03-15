@@ -49,6 +49,19 @@
         <item name="android:importantForAutofill">no</item>
     </style>
 
+    <style name="report_label">
+        <item name="android:background">#00000000</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">50dp</item>
+        <item name="android:layout_gravity">center|top</item>
+        <item name="android:ems">10</item>
+        <item name="android:layout_margin">10dp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">#FFFFFF</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:importantForAutofill">no</item>
+    </style>
+
     <style name="backButton">
         <item name="android:layout_height">50dp</item>
         <item name="android:background">@drawable/back_button</item>

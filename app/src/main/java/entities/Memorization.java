@@ -1,5 +1,7 @@
 package entities;
 
+import androidx.annotation.NonNull;
+
 import java.util.Objects;
 
 public class Memorization {
@@ -41,5 +43,12 @@ public class Memorization {
     @Override
     public int hashCode() {
         return Objects.hash(name);
+    }
+
+    @NonNull
+    @Override
+    public String toString() {
+        return name +
+                ", التقييم: " + percentOfMemorization;
     }
 }

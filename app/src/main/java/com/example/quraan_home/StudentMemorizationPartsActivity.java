@@ -192,6 +192,9 @@ public class StudentMemorizationPartsActivity extends AppCompatActivity {
                 else
                     pagesMemorized.add(new Memorization(((CheckBox) l.getChildAt(1)).getText().toString(),
                             Integer.parseInt(rate.getText().toString())));
+            } else if (!((CheckBox) l.getChildAt(1)).isChecked()) {
+                pagesMemorized.remove(new Memorization(((CheckBox) l.getChildAt(1)).getText().toString()
+                        , 0));
             }
         }
 

@@ -18,6 +18,13 @@
         android:theme="@style/Theme.Quran_home"
         tools:ignore="UnusedAttribute">
         <activity
+            android:name=".StudentReportActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name=".StudentMemorizationPartsActivity"
             android:exported="false"
             android:windowSoftInputMode="adjustPan">

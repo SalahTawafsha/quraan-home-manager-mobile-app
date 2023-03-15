@@ -55,4 +55,9 @@ public class StudentHomeActivity extends AppCompatActivity {
         Intent intent = new Intent(this, StudentUpdateInfoActivity.class);
         startActivity(intent);
     }
+
+    public void showInfo(View view) {
+        Intent intent = new Intent(this, StudentReportActivity.class);
+        startActivity(intent);
+    }
 }
