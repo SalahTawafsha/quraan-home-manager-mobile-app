@@ -1,7 +1,5 @@
 package com.example.quraan_home;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
@@ -15,6 +13,8 @@ import android.os.Environment;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
@@ -173,7 +173,7 @@ public class TeacherHomeActivity extends AppCompatActivity {
         if (input.size() < 30) {
             for (Student student : input) {
                 screen.getCanvas().drawText(student.getName(), 585, y, design);
-                screen.getCanvas().drawText(student.getPagesMemorized().size() + "", 420, y, design);
+                screen.getCanvas().drawText(student.countOfPageMemorized() + "", 420, y, design);
                 screen.getCanvas().drawText(student.getRecitation().size() + "", 315, y, design);
                 screen.getCanvas().drawText(student.getDatesOfAbsence().size() + "", 226, y, design);
                 screen.getCanvas().drawText(student.getNotes(), 170, y, design);
@@ -187,7 +187,7 @@ public class TeacherHomeActivity extends AppCompatActivity {
                 Student student = input.get(i);
 
                 screen.getCanvas().drawText(student.getName(), 585, y, design);
-                screen.getCanvas().drawText(student.getPagesMemorized().size() + "", 420, y, design);
+                screen.getCanvas().drawText(student.countOfPageMemorized() + "", 420, y, design);
                 screen.getCanvas().drawText(student.getRecitation().size() + "", 315, y, design);
                 screen.getCanvas().drawText(student.getDatesOfAbsence().size() + "", 226, y, design);
                 screen.getCanvas().drawText(student.getNotes(), 170, y, design);

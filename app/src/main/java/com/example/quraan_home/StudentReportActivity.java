@@ -1,7 +1,5 @@
 package com.example.quraan_home;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -15,6 +13,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
@@ -62,7 +62,7 @@ public class StudentReportActivity extends AppCompatActivity {
                         absence.setText(text);
 
 
-                        text = new StringBuilder("عدد الصفحات المحفوظة:" + s.getPagesMemorized().size() + "\n");
+                        text = new StringBuilder("عدد الصفحات المحفوظة:" + s.countOfPageMemorized() + "\n");
                         for (int i = 0; i < s.getPagesMemorized().size(); i++)
                             text.append(s.getPagesMemorized().get(i)).append("\n");
                         memorization.setText(text);
@@ -115,7 +115,7 @@ public class StudentReportActivity extends AppCompatActivity {
         screen.getCanvas().drawText("عدد الغيابات: " + s.getDatesOfAbsence().size(), x, y, design1);
         y += 20;
 
-        screen.getCanvas().drawText("عدد الصفحات المحفوظة: " + s.getPagesMemorized().size(), x, y, design1);
+        screen.getCanvas().drawText("عدد الصفحات المحفوظة: " + s.countOfPageMemorized(), x, y, design1);
         y += 20;
 
         screen.getCanvas().drawText("عدد احكام التجويد التي تم تطبيقها: " + s.getRecitation().size(), x, y, design1);

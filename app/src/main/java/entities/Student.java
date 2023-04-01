@@ -1,6 +1,7 @@
 package entities;
 
 import android.annotation.SuppressLint;
+import android.util.Log;
 
 import androidx.annotation.NonNull;
 
@@ -83,6 +84,22 @@ public class Student extends Person {
 
     public ArrayList<Memorization> getPagesMemorized() {
         return pagesMemorized;
+    }
+
+    public int countOfPageMemorized() {
+        int count = 0;
+        byte[] arr = new byte[604];
+        for (int i = 0; i < pagesMemorized.size(); i++) {
+            String[] name = pagesMemorized.get(i).getName().split(":");
+            int pageNum = Integer.parseInt(name[0]);
+            if (arr[pageNum - 1] == 0) {
+                Log.e("test", name[1]);
+                count++;
+                arr[pageNum - 1] = 1;
+            }
+        }
+
+        return count;
     }
 
     public String getNotes() {
